@@ -1,0 +1,25 @@
+00 skel_root
+  01 hips
+    02 aimnodes
+      03 spinelo
+        04 spinehi
+          05 rscap
+          06 lscap
+          07 lshoulder_wgt
+          08 lbicep
+            09 lforearm
+              10 lhand
+          11 rshoulder_wgt
+          12 rbicep
+            13 rforearm
+              14 rhand
+          15 neck
+            16 head
+    17 rthigh
+      18 rcalf
+        19 rfoot
+          20 rtoe
+    21 lthigh
+      22 lcalf
+        23 lfoot
+          24 ltoe

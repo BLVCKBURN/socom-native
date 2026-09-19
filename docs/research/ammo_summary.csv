@@ -1,0 +1,31 @@
+Key,Name,DESCRIPTION,ID,ImpactDamage,Stun,ArmorPierce,ExplosionDamage,ExplosionRadius
+AMMO0,9x19P,9x19P,1,1.4,1.0,1.0,0.0,0.0
+AMMO1,9x19P SD,9x19P SD,34,1.2,1.0,1.0,0.0,0.0
+AMMO2,5.7 x 28mm,5.7 x 28mm,38,1.4,1.0,2.0,0.0,0.0
+AMMO3,.22 long rifle,.22 long rifle,2,2.5,1.0,3.0,0.0,0.0
+AMMO4,45 ACP,45 ACP,3,3.0,2.0,4.0,0.0,0.0
+AMMO5,50 AE,50 AE,5,6.4,4.0,5.0,0.0,0.0
+AMMO6,5.45 x 39mm Soviet,5.45 x 39mm Soviet,7,3.4,3.0,4.0,0.0,0.0
+AMMO7,5.56 x 45mm NATO SD,5.56 x 45mm NATO SD,35,2.15,3.0,2.0,0.0,0.0
+AMMO8,5.56 x 45mm,5.56 x 45mm,8,2.3,3.0,3.0,0.0,0.0
+AMMO9,7.62 x 51mm,7.62 x 51mm,9,2.3,4.0,8.0,0.0,0.0
+AMMO10,7.62 x 51mm SD,7.62 x 51mm SD,36,2.15,4.0,6.0,0.0,0.0
+AMMO11,7.62 x 39mm M1943,7.62 x 51mm M1943,37,2.3,4.0,6.0,0.0,0.0
+AMMO12,.50 Cal,.50 Cal,10,9.0,4.0,7.0,0.0,0.0
+AMMO13,12 Gauge,12 Gauge,27,0.0,4.0,0.0,12.0,20.0
+AMMO14,M67 Ammo,raw={00},11,0.0,0.0,0.0,10.0,15.0
+AMMO15,HE Grenade Ammo,raw={00},26,0.0,0.0,0.0,10.0,10.0
+AMMO16,AN-M8 Ammo,raw={00},12,0.5,0.0,0.0,0.0,0.0
+AMMO17,Mark141 Ammo,raw={00},14,0.0,0.0,0.0,0.0,10.0
+AMMO18,Satchel Charge Ammo,raw={00},16,0.0,0.0,0.0,20.0,28.0
+AMMO19,Claymore Ammo,raw={00},17,0.0,0.0,0.0,16.0,25.0
+AMMO20,C4 Ammo,raw={00},18,0.0,0.0,0.0,18.0,8.0
+AMMO21,MPBOMB Ammo,raw={00},19,0.0,0.0,0.0,50.0,30.0
+AMMO22,M203 HE Ammo,M203 HE Ammo,20,0.0,10.0,2.0,10.0,10.0
+AMMO23,M203 FRAG Ammo,M203 FRAG Ammo,28,0.0,10.0,0.0,10.0,15.0
+AMMO24,M203 SMOKE Ammo,M203 SMOKE Ammo,22,0.0,0.0,0.0,0.0,0.0
+AMMO25,GL HE Ammo,M79 HE,28,0.0,0.0,0.0,10.0,15.0
+AMMO26,GL Frag Ammo,M79 FRAG,29,0.0,0.0,0.0,10.0,15.0
+AMMO27,GL Smoke Ammo,M79 SMOKE,31,0.0,0.0,0.0,0.0,0.0
+AMMO28,ag_missile,raw={00},24,0.0,0.0,0.0,30.0,40.0
+AMMO29,explosive_stuff,raw={00},25,0.0,0.0,0.0,8.0,15.0

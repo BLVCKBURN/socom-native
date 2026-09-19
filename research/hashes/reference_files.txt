@@ -1,0 +1,6 @@
+Reference executable: SCUS_971.34
+SHA256: 5111e776f64611ae1dcdc725f0ce9db660e90e1763e897e8f5b90f7402ce30d1
+Size: 3724336 bytes
+Architecture: PlayStation 2 / MIPS R5900
+Entry point: 0x00140008
+Compiler string observed: MW MIPS C Compiler (2.4.1.01)

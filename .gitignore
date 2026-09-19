@@ -1,0 +1,58 @@
+# Original/proprietary SOCOM game files
+*.iso
+*.zar
+*.zed
+SCUS_*
+SLUS_*
+
+# Extracted/proprietary assets
+/game/
+/rom/
+/original_assets/
+/extracted/
+/assets/generated/
+/generated/
+
+# Converted game assets
+*.obj
+*.mtl
+*.gltf
+*.glb
+*.bin
+*.tga
+*.dds
+*.tif
+*.pic
+
+# PNG/JPG may be source-controlled selectively.
+# By default ignore generated asset images.
+generated_*.png
+generated_*.jpg
+
+# Build output
+/build/
+/out/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.xcodeproj
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.exe
+*.dll
+*.dylib
+*.so
+*.o
+*.obj
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python/tool scratch
+__pycache__/
+*.pyc
