@@ -206,3 +206,69 @@ The decompiler prints compact action IDs and names directly. Extended records
 print the confirmed property-mode map and every packed float. Action labels and
 the final packed-to-runtime expansion remain deliberately unnamed until the
 loader path proves them.
+
+## Nested `IF` / `ELSEIF` expressions
+
+Commands 2 and 3 begin with a 32-bit expression-mode field at record offset
+`+4`. Starting at `+8`, the expression contains a stream of nested records with
+the same `rawOpcode`, `meta`, and derived record-size rules as top-level ZANIM
+commands. Parsing continues until the outer record ends or a diagnostic-string
+sentinel is reached. This permits recursive, lossless condition decompilation.
+
+Some zero-term/compiler-diagnostic forms append `0xFFFFFFFF` and an aligned
+NUL-terminated message such as `INRANGE test passed`. The decompiler now emits
+those messages and retains any remaining trailing bytes.
+
+## Typed `DESTRUCTION_SOURCE`
+
+Command 26's parser at `0x1B8610` constructs an 80-byte particle/destruction
+source with node, texture, RGBA, maximum size, velocity ranges, lifespan range,
+friction, world acceleration, strip/shard mode, and opacity. Its tick handler
+at `0x1C0E20` passes those fields to the particle-source constructor.
+
+M8 stores a compact variable-length form. Two consecutive strings beginning at
+record offset `+0x10` identify the optional node and required texture/resource
+name. Most records target the current node and reference resources such as
+`SND_VM08_35`; named variants include nodes such as `DiMone` and `Hutchins`.
+The preceding 12-byte compact prefix remains visible pending recovery of its
+loader-side expansion.
+
+## Typed child attachment
+
+The compact eight-byte command-41 form matches the runtime structure used by
+parser `0x1AC8C0` and tick handler `0x1BA7C0`:
+
+```cpp
+struct ObjectAddChild {
+    SeqCommandHeader header;
+    uint16_t flags;       // bit 0: retain world location
+    uint8_t parentId;
+    uint8_t childId;
+};
+```
+
+The M8 decompiler now names both IDs and the retain-world-location option.
+Larger command-42/43 variants remain raw because their serialized loader
+transformation is not equivalent to this compact runtime form.
+
+## Typed `LOOP` and `WAIT`
+
+Compact `LOOP` records contain a mode and signed count. Variable-length forms
+add an argument, enable field, and aligned sequence name; M8 uses names such as
+`Patrol_guns`, `Spot_shout`, and `Close_call`.
+
+The common `WAIT` mode `0x09` carries a floating-point duration in seconds.
+Mode `0x10` carries an integer frame count. Less common extended modes retain
+their additional bytes until their range/randomization semantics are proven.
+
+## Typed `RANGE_TEST`
+
+Command 8's tick handler at `0x1B97E0` resolves two optional nodes or
+translations, computes their displacement, squares its length, and compares it
+with the configured squared-radius field. Six comparison flag bits implement
+`<`, `<=`, `>`, `>=`, `==`, and `!=` tests.
+
+The common compact M8 record exposes a flags word, source radius, reference
+type, and reference payload. The loader expands these into the runtime node,
+translation, comparison, and squared-radius fields. Extended compact bytes are
+retained until that expansion is fully mapped.

@@ -310,6 +310,50 @@ static std::string decodeCommand(
     // Compact command layouts independently supported by the executable
     // parser and M8 serialized records.
     switch (id) {
+    case 2: // IF
+    case 3: // ELSEIF
+        if (size >= 8) {
+            const auto expressionMode = rd<std::uint32_t>(rec+4);
+            ss << " expression_mode=" << expressionMode;
+            std::size_t p = 8;
+            std::uint32_t termCount=0;
+            while (p+4<=size && rd<std::uint32_t>(rec+p)!=0xFFFFFFFFu) {
+                const auto nestedOpcode = rd<std::uint16_t>(rec+p);
+                const auto nestedMeta   = rd<std::uint16_t>(rec+p+2);
+                const auto nestedId = static_cast<std::uint8_t>(nestedOpcode & 0xFF);
+                const auto nestedSize =
+                    static_cast<std::size_t>((nestedMeta & 0xFFFC) >> 2);
+                if (nestedSize < 4 || p+nestedSize > size) {
+                    ss << " malformed_term=" << termCount
+                       << " trailing=" << hexBytes(rec+p, size-p);
+                    return ss.str();
+                }
+                ss << " {op=" << static_cast<unsigned>(nestedId) << ' '
+                   << decodeCommand(
+                    nestedId, rec+p, nestedSize, localNames) << '}';
+                p += nestedSize;
+                ++termCount;
+            }
+            if (p < size) {
+                // Compiler-generated diagnostics use 0xFFFFFFFF followed by
+                // an aligned NUL-terminated string.
+                if (p+4 <= size && rd<std::uint32_t>(rec+p)==0xFFFFFFFFu) {
+                    p += 4;
+                    std::size_t end=p;
+                    while (end<size && rec[end]) ++end;
+                    if (end>p)
+                        ss << " message=" << quoted(std::string(
+                            reinterpret_cast<const char*>(rec+p), end-p));
+                    p = end<size ? end+1 : end;
+                }
+                while (p<size && rec[p]==0) ++p;
+                if (p<size)
+                    ss << " trailing=" << hexBytes(rec+p, size-p);
+            }
+            return ss.str();
+        }
+        break;
+
     case 16: // OBJECT_ACTIVE_STATE
         if (size >= 8) {
             const auto state = rd<std::uint16_t>(rec+4);
@@ -317,6 +361,65 @@ static std::string decodeCommand(
             ss << " target=" << quoted(localName(localNames,name))
                << " state=" << (state ? "ON" : "OFF")
                << " (" << state << ")";
+            return ss.str();
+        }
+        break;
+
+    case 9: // RANDOM_WEIGHT
+        if (size == 8) {
+            ss << " weight=" << rd<float>(rec+4);
+            return ss.str();
+        }
+        break;
+
+    case 8: // RANGE_TEST
+        if (size >= 20) {
+            ss << " flags=0x" << std::hex << rd<std::uint32_t>(rec+4)
+               << std::dec << " radius=" << rd<float>(rec+8)
+               << " reference_type=" << rd<std::uint32_t>(rec+12)
+               << " reference_payload=0x" << std::hex
+               << rd<std::uint32_t>(rec+16) << std::dec;
+            if (size>20) ss << " trailing=" << hexBytes(rec+20,size-20);
+            return ss.str();
+        }
+        break;
+
+    case 13: // LOOP
+        if (size == 12) {
+            ss << " mode=" << rd<std::uint32_t>(rec+4)
+               << " count=" << rd<std::int32_t>(rec+8);
+            return ss.str();
+        }
+        if (size >= 17) {
+            const auto mode = rd<std::uint32_t>(rec+4);
+            const auto arg  = rd<std::uint32_t>(rec+8);
+            const auto enabled = rd<std::uint32_t>(rec+12);
+            std::size_t end=16;
+            while (end<size && rec[end]) ++end;
+            ss << " mode=" << mode << " argument=" << arg
+               << " enabled=" << enabled;
+            if (end>16)
+                ss << " sequence=" << quoted(std::string(
+                    reinterpret_cast<const char*>(rec+16),end-16));
+            std::size_t p=end<size ? end+1 : end;
+            while (p<size && rec[p]==0) ++p;
+            if (p<size) ss << " trailing=" << hexBytes(rec+p,size-p);
+            return ss.str();
+        }
+        break;
+
+    case 14: // WAIT
+        if (size >= 12) {
+            const auto mode = rd<std::uint32_t>(rec+4);
+            ss << " mode=0x" << std::hex << mode << std::dec;
+            if (mode == 0x09)
+                ss << " seconds=" << rd<float>(rec+8);
+            else if (mode == 0x10)
+                ss << " frames=" << rd<std::int32_t>(rec+8);
+            else
+                ss << " value0=0x" << std::hex
+                   << rd<std::uint32_t>(rec+8) << std::dec;
+            if (size>12) ss << " trailing=" << hexBytes(rec+12,size-12);
             return ss.str();
         }
         break;
@@ -434,6 +537,42 @@ static std::string decodeCommand(
         }
         break;
 
+    case 26: // DESTRUCTION_SOURCE
+        if (size >= 17) {
+            std::size_t p=16;
+            std::size_t end=p;
+            while (end<size && rec[end]) ++end;
+            const std::string node(
+                reinterpret_cast<const char*>(rec+p), end-p);
+            p = end<size ? end+1 : end;
+            end=p;
+            while (end<size && rec[end]) ++end;
+            const std::string texture(
+                reinterpret_cast<const char*>(rec+p), end-p);
+
+            ss << " node=" << (node.empty() ? "<current>" : quoted(node));
+            if (!texture.empty()) ss << " texture=" << quoted(texture);
+            ss << " prefix=" << hexBytes(rec+4, 12);
+            p = end<size ? end+1 : end;
+            while (p<size && rec[p]==0) ++p;
+            if (p<size) ss << " trailing=" << hexBytes(rec+p, size-p);
+            return ss.str();
+        }
+        break;
+
+    case 41: // OBJECT_ADD_CHILD (compact runtime form)
+        if (size >= 8) {
+            const auto flags = rd<std::uint16_t>(rec+4);
+            ss << " parent_id=" << static_cast<unsigned>(rec[6])
+               << " child_id=" << static_cast<unsigned>(rec[7])
+               << " retain_world_location=" << ((flags & 1) ? "true" : "false");
+            if (flags & ~1u)
+                ss << " unknown_flags=0x" << std::hex
+                   << static_cast<unsigned>(flags & ~1u) << std::dec;
+            return ss.str();
+        }
+        break;
+
     case 33: // CALL_ANIMATION
     case 34: // STOP_ANIMATION
     case 35: // PAUSE_ANIMATION
@@ -451,9 +590,12 @@ static std::string decodeCommand(
     case 4:  // ELSE
     case 5:  // ENDIF
     case 10: // FAIL
-    case 30: // END_WHILE
     case 32: // BREAK
         return ss.str();
+
+    case 30: // END_WHILE at top level; opcode 30 is also used in expressions
+        if (size == 4) return ss.str();
+        break;
 
     default:
         break;
