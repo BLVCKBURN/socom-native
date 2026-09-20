@@ -234,6 +234,63 @@ static std::string localName(
     return "<name_index_" + std::to_string(index) + ">";
 }
 
+static const char* timerComparison(std::uint32_t mode) {
+    // Jump table at SCUS_971.34:0x462190, used by tick handler 0x1C0D00.
+    static const std::array<const char*,7> ops =
+        {{"==", "!=", ">=", "<=", ">", "<", "SET"}};
+    return mode < ops.size() ? ops[mode] : nullptr;
+}
+
+static std::string soundFlags(std::uint16_t flags) {
+    struct Entry { std::uint16_t bit; const char* name; };
+    static const std::array<Entry,12> entries = {{
+        {0x0001,"ALT_NAME_LOOKUP"}, {0x0002,"AT_NODE"},
+        {0x0004,"TRANSLATION"},     {0x0008,"INPUT_TRANSLATION"},
+        {0x0010,"VOLUME"},          {0x0020,"PAN"},
+        {0x0040,"PITCH"},           {0x0080,"START"},
+        {0x0100,"STOP"},            {0x0200,"STOP_ON_EXIT"},
+        {0x0400,"MUSIC_LOCAL"},     {0x0800,"MUSIC_EVENT"}
+    }};
+    std::ostringstream ss;
+    bool first = true;
+    for (const auto& e : entries) {
+        if (!(flags & e.bit)) continue;
+        if (!first) ss << '|';
+        ss << e.name;
+        first = false;
+    }
+    const auto unknown = static_cast<std::uint16_t>(flags & ~0x0FFFu);
+    if (unknown) {
+        if (!first) ss << '|';
+        ss << "UNKNOWN_0x" << std::hex << unknown << std::dec;
+        first = false;
+    }
+    return first ? "NONE" : ss.str();
+}
+
+static std::string cameraModes(std::uint32_t control) {
+    static const std::array<const char*,8> properties = {{
+        "H_FOV", "V_FOV", "NEAR_CLIP", "MID_CLIP", "FAR_CLIP",
+        "FOG_NEAR", "FOG_FAR", "FOG_COLOR"
+    }};
+    std::ostringstream ss;
+    bool first = true;
+    for (std::size_t i=0; i<properties.size(); ++i) {
+        const auto mode = static_cast<unsigned>((control >> (i*2)) & 3u);
+        if (!mode) continue;
+        if (!first) ss << ',';
+        ss << properties[i] << ':' << mode;
+        first = false;
+    }
+    const auto unknown = control & 0xFFFF0000u;
+    if (unknown) {
+        if (!first) ss << ',';
+        ss << "UNKNOWN:0x" << std::hex << unknown << std::dec;
+        first = false;
+    }
+    return first ? "NONE" : ss.str();
+}
+
 static bool closesBefore(std::uint8_t id) {
     return id==3 || id==4 || id==5 || id==30;
 }
@@ -253,6 +310,50 @@ static std::string decodeCommand(
     // Compact command layouts independently supported by the executable
     // parser and M8 serialized records.
     switch (id) {
+    case 2: // IF
+    case 3: // ELSEIF
+        if (size >= 8) {
+            const auto expressionMode = rd<std::uint32_t>(rec+4);
+            ss << " expression_mode=" << expressionMode;
+            std::size_t p = 8;
+            std::uint32_t termCount=0;
+            while (p+4<=size && rd<std::uint32_t>(rec+p)!=0xFFFFFFFFu) {
+                const auto nestedOpcode = rd<std::uint16_t>(rec+p);
+                const auto nestedMeta   = rd<std::uint16_t>(rec+p+2);
+                const auto nestedId = static_cast<std::uint8_t>(nestedOpcode & 0xFF);
+                const auto nestedSize =
+                    static_cast<std::size_t>((nestedMeta & 0xFFFC) >> 2);
+                if (nestedSize < 4 || p+nestedSize > size) {
+                    ss << " malformed_term=" << termCount
+                       << " trailing=" << hexBytes(rec+p, size-p);
+                    return ss.str();
+                }
+                ss << " {op=" << static_cast<unsigned>(nestedId) << ' '
+                   << decodeCommand(
+                    nestedId, rec+p, nestedSize, localNames) << '}';
+                p += nestedSize;
+                ++termCount;
+            }
+            if (p < size) {
+                // Compiler-generated diagnostics use 0xFFFFFFFF followed by
+                // an aligned NUL-terminated string.
+                if (p+4 <= size && rd<std::uint32_t>(rec+p)==0xFFFFFFFFu) {
+                    p += 4;
+                    std::size_t end=p;
+                    while (end<size && rec[end]) ++end;
+                    if (end>p)
+                        ss << " message=" << quoted(std::string(
+                            reinterpret_cast<const char*>(rec+p), end-p));
+                    p = end<size ? end+1 : end;
+                }
+                while (p<size && rec[p]==0) ++p;
+                if (p<size)
+                    ss << " trailing=" << hexBytes(rec+p, size-p);
+            }
+            return ss.str();
+        }
+        break;
+
     case 16: // OBJECT_ACTIVE_STATE
         if (size >= 8) {
             const auto state = rd<std::uint16_t>(rec+4);
@@ -260,6 +361,214 @@ static std::string decodeCommand(
             ss << " target=" << quoted(localName(localNames,name))
                << " state=" << (state ? "ON" : "OFF")
                << " (" << state << ")";
+            return ss.str();
+        }
+        break;
+
+    case 9: // RANDOM_WEIGHT
+        if (size == 8) {
+            ss << " weight=" << rd<float>(rec+4);
+            return ss.str();
+        }
+        break;
+
+    case 8: // RANGE_TEST
+        if (size >= 20) {
+            ss << " flags=0x" << std::hex << rd<std::uint32_t>(rec+4)
+               << std::dec << " radius=" << rd<float>(rec+8)
+               << " reference_type=" << rd<std::uint32_t>(rec+12)
+               << " reference_payload=0x" << std::hex
+               << rd<std::uint32_t>(rec+16) << std::dec;
+            if (size>20) ss << " trailing=" << hexBytes(rec+20,size-20);
+            return ss.str();
+        }
+        break;
+
+    case 13: // LOOP
+        if (size == 12) {
+            ss << " mode=" << rd<std::uint32_t>(rec+4)
+               << " count=" << rd<std::int32_t>(rec+8);
+            return ss.str();
+        }
+        if (size >= 17) {
+            const auto mode = rd<std::uint32_t>(rec+4);
+            const auto arg  = rd<std::uint32_t>(rec+8);
+            const auto enabled = rd<std::uint32_t>(rec+12);
+            std::size_t end=16;
+            while (end<size && rec[end]) ++end;
+            ss << " mode=" << mode << " argument=" << arg
+               << " enabled=" << enabled;
+            if (end>16)
+                ss << " sequence=" << quoted(std::string(
+                    reinterpret_cast<const char*>(rec+16),end-16));
+            std::size_t p=end<size ? end+1 : end;
+            while (p<size && rec[p]==0) ++p;
+            if (p<size) ss << " trailing=" << hexBytes(rec+p,size-p);
+            return ss.str();
+        }
+        break;
+
+    case 14: // WAIT
+        if (size >= 12) {
+            const auto mode = rd<std::uint32_t>(rec+4);
+            ss << " mode=0x" << std::hex << mode << std::dec;
+            if (mode == 0x09)
+                ss << " seconds=" << rd<float>(rec+8);
+            else if (mode == 0x10)
+                ss << " frames=" << rd<std::int32_t>(rec+8);
+            else
+                ss << " value0=0x" << std::hex
+                   << rd<std::uint32_t>(rec+8) << std::dec;
+            if (size>12) ss << " trailing=" << hexBytes(rec+12,size-12);
+            return ss.str();
+        }
+        break;
+
+    case 46: // TIMER
+        // Serialized M8 layout (16 bytes total):
+        //   +0x04 u32 value payload
+        //   +0x08 u32 comparison-mode payload
+        //   +0x0C u8  value operand tag
+        //   +0x0D u8  mode operand tag
+        // The runtime command is 12 bytes: mode at +4 and float value at +8.
+        // The loader evaluates/converts the serialized operands into that form.
+        if (size >= 16) {
+            const auto valuePayload = rd<std::uint32_t>(rec+4);
+            const auto modePayload  = rd<std::uint32_t>(rec+8);
+            const auto valueTag     = rec[12];
+            const auto modeTag      = rec[13];
+            const auto op           = timerComparison(modePayload);
+
+            if (op) {
+                if (modePayload == 6)
+                    ss << " value=" << valuePayload;
+                else
+                    ss << " test " << op << ' ' << valuePayload;
+            }
+            else {
+                ss << " value_payload=" << valuePayload
+                   << " mode_payload=" << modePayload;
+            }
+
+            // Tags 0x07/0x02 are the normal M8 literal/mode encoding. Keep
+            // non-canonical tags visible until the generic operand evaluator
+            // is fully recovered; this preserves dynamic/symbolic records.
+            if (valueTag != 0x07 || modeTag != 0x02)
+                ss << " operand_tags=[0x" << std::hex
+                   << static_cast<unsigned>(valueTag) << ",0x"
+                   << static_cast<unsigned>(modeTag) << std::dec << ']';
+            return ss.str();
+        }
+        break;
+
+    case 27: // SOUND
+        // Parser 0x1B56A0 creates a 0x20-byte base command. Seq_Data may
+        // truncate unused trailing defaults or append command-specific data.
+        if (size >= 8) {
+            const auto flags   = rd<std::uint16_t>(rec+4);
+            const auto soundId = rec[6];
+            ss << " sound_id=" << static_cast<unsigned>(soundId)
+               << " flags=" << soundFlags(flags);
+
+            if ((flags & 0x0002) && size >= 17)
+                ss << " node_id=" << static_cast<unsigned>(rec[16]);
+            if ((flags & 0x0010) && size >= 12)
+                ss << " volume=" << rd<float>(rec+8);
+            if ((flags & 0x0020) && size >= 14)
+                ss << " pan=" << rd<std::uint16_t>(rec+12);
+            if ((flags & 0x0040) && size >= 16)
+                ss << " pitch_raw=" << rd<std::int16_t>(rec+14);
+            if ((flags & 0x0004) && size >= 32)
+                ss << " translation=(" << rd<float>(rec+20) << ','
+                   << rd<float>(rec+24) << ',' << rd<float>(rec+28) << ')';
+
+            // Compact M8 records retain two nonzero words even when their
+            // corresponding option bits are clear. Their loader semantics are
+            // not yet proven, so expose them explicitly instead of guessing.
+            if (size >= 16) {
+                const auto field08 = rd<std::uint32_t>(rec+8);
+                const auto field0C = rd<std::uint32_t>(rec+12);
+                if (!(flags & 0x0010) && field08)
+                    ss << " field08_raw=0x" << std::hex << field08 << std::dec;
+                if (!(flags & (0x0020|0x0040)) && field0C)
+                    ss << " field0C_raw=0x" << std::hex << field0C << std::dec;
+            }
+            if (size > 32)
+                ss << " appended_data=" << hexBytes(rec+32, size-32);
+            return ss.str();
+        }
+        break;
+
+    case 25: // CAMERA
+        if (size >= 16) {
+            const auto control = rd<std::uint32_t>(rec+4);
+            if (control == 0) {
+                const auto action = rd<std::uint32_t>(rec+8);
+                ss << " action_id=" << action;
+                if (size > 16) {
+                    std::size_t end = 12;
+                    while (end < size && rec[end]) ++end;
+                    if (end > 12)
+                        ss << " name=" << quoted(std::string(
+                            reinterpret_cast<const char*>(rec+12), end-12));
+                    if (end < size) ++end;
+                    if (end < size)
+                        ss << " trailing=" << hexBytes(rec+end, size-end);
+                }
+                return ss.str();
+            }
+
+            ss << " control=0x" << std::hex << control << std::dec
+               << " modes=[" << cameraModes(control) << ']';
+            if (size > 8) {
+                ss << " payload=[";
+                bool first = true;
+                std::size_t p = 8;
+                for (; p+4 <= size; p+=4) {
+                    if (!first) ss << ',';
+                    ss << rd<float>(rec+p);
+                    first = false;
+                }
+                ss << ']';
+                if (p < size)
+                    ss << " trailing=" << hexBytes(rec+p, size-p);
+            }
+            return ss.str();
+        }
+        break;
+
+    case 26: // DESTRUCTION_SOURCE
+        if (size >= 17) {
+            std::size_t p=16;
+            std::size_t end=p;
+            while (end<size && rec[end]) ++end;
+            const std::string node(
+                reinterpret_cast<const char*>(rec+p), end-p);
+            p = end<size ? end+1 : end;
+            end=p;
+            while (end<size && rec[end]) ++end;
+            const std::string texture(
+                reinterpret_cast<const char*>(rec+p), end-p);
+
+            ss << " node=" << (node.empty() ? "<current>" : quoted(node));
+            if (!texture.empty()) ss << " texture=" << quoted(texture);
+            ss << " prefix=" << hexBytes(rec+4, 12);
+            p = end<size ? end+1 : end;
+            while (p<size && rec[p]==0) ++p;
+            if (p<size) ss << " trailing=" << hexBytes(rec+p, size-p);
+            return ss.str();
+        }
+        break;
+
+    case 41: // OBJECT_ADD_CHILD (compact runtime form)
+        if (size >= 8) {
+            const auto flags = rd<std::uint16_t>(rec+4);
+            ss << " parent_id=" << static_cast<unsigned>(rec[6])
+               << " child_id=" << static_cast<unsigned>(rec[7])
+               << " retain_world_location=" << ((flags & 1) ? "true" : "false");
+            if (flags & ~1u)
+                ss << " unknown_flags=0x" << std::hex
+                   << static_cast<unsigned>(flags & ~1u) << std::dec;
             return ss.str();
         }
         break;
@@ -281,9 +590,12 @@ static std::string decodeCommand(
     case 4:  // ELSE
     case 5:  // ENDIF
     case 10: // FAIL
-    case 30: // END_WHILE
     case 32: // BREAK
         return ss.str();
+
+    case 30: // END_WHILE at top level; opcode 30 is also used in expressions
+        if (size == 4) return ss.str();
+        break;
 
     default:
         break;
