@@ -1,0 +1,11 @@
+stage,address,confidence,evidence
+global_construct,0x001FB4F0,high,Called on singleton 0x004D4880 during application startup at 0x00140658
+select_load_descriptor,0x001FAE10,high,Called by UI SetMission 0x001D61A0 and loads mission.rdr configuration
+activate_selected_mission,0x001FA610,high,Called by state loader at 0x00172EC0 with selected mission string
+mount_animation_data,0x001F9D70,high,Called from mission_activate and mounts common/mission zanim+mzanim data
+state_enter_runtime,0x001F9FA0,high,Called by state transition at 0x0017CC58; creates mission result valves and runtime systems
+per_frame,0x001F8EB0,high,Actual mission frame routine; wrapper 0x001F94A0 delegates here
+objective_update,0x001F8900,high,Called from mission_frame and periodically updates objective state
+terminal_result_transition,0x001F8580,high,Called for complete/failure/abort/timeout terminal states
+runtime_cleanup,0x001F92A0,high,Called by result/frame paths and tears down active runtime pieces
+state_shutdown,0x001F9780,high,Called by state shutdown callback 0x00172E3C

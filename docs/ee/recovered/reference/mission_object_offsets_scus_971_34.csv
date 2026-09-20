@@ -1,0 +1,29 @@
+offset,name,confidence,evidence
+0x0018,result_state,high,Byte compared/written by 0x001F8580 during terminal state transitions
+0x001C,mission_name_ptr,high,Selected mission string pointer used by activation/archive path formatting
+0x0020,mission_name_buffer,high,Backing storage used when selected mission name is copied
+0x0060,elapsed_time,high,0x001F8EB0 adds frame delta every frame
+0x0064,result_deadline,high,0x001F8580 uses -1 sentinel then sets elapsed_time + 3.0 on transition
+0x0068,mode_time_accumulator,medium,Updated by frame path in player-active branch; exact original member name unknown
+0x006C,mode_time_scale,medium,Multiplied by frame delta before accumulation into +0x68
+0x007C,countdown_or_delay,medium,Positive value is decremented by frame delta
+0x0084,array0_count,medium,Count consumed during runtime phase-B destruction
+0x0088,array0_ptr,medium,Pointer array whose entries are passed to retail function 0x002526C0
+0x0098,objective_container,medium,Container initialized in constructor and used by objective/runtime paths
+0x009C,objective_count,medium,Count consumed during objective/runtime teardown
+0x00A0,objective_entries_ptr,medium,Entry storage used with +0x9C count
+0x00A8,objective_refresh_timer,high,Accumulates frame delta and is reset around one-second objective refresh
+0x00AC,mission_state_flag,medium,Branches terminal handling in mission frame
+0x00B4,ai_params_block,high,Start of 0x30-byte defaults block initialized at 0x001F9710
+0x00F4,mission_complete_valve,high,Named mission_complete valve handle
+0x00F8,mission_failure_valve,high,Named mission_failure valve handle
+0x00FC,mission_abort_valve,high,Named mission_abort valve handle
+0x0100,mission_timeout_valve,high,Named mission_timeout valve handle
+0x0104,mission_replay_valve,high,Named mission_replay valve handle
+0x0590,runtime_list_or_head,medium,Initialized to null by constructor and traversed by runtime phases
+0x0594,active_gameplay_object,medium,Allocated in constructor/init path and dereferenced by mission frame
+0x0598,init_flag,medium,Cleared on construction/state changes and set by runtime initialization
+0x05C4,loading_screen_assets,high,Populated from mission.rdr LoadingScreenAssets
+0x05C8,runtime_container_a,medium,Container constructed/destructed in lifecycle paths
+0x05D4,runtime_container_b,medium,Container used by mission camera/objective/runtime paths
+0x05E4,satchel_timer,high,Default 10.0 and overridden by SATCHEL_TIMER from ai_params

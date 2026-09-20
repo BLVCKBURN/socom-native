@@ -1,0 +1,44 @@
+SOCOM Native - M8 runtime pack validation
+=========================================
+
+Input checkpoint:
+  Existing reconstructed M8 visual and collision glTF exports.
+
+Pack format:
+  SOCOMR1 version 1
+
+Validated counts:
+  visual primitives                  1890
+  render triangles                  38220
+  flattened render vertices        114660
+  skipped non-triangle primitives      13
+  collision triangles                9244
+  degenerate collision triangles        0
+
+Bounds (meters):
+  min = (-207.41875, -3.81250, -115.76875)
+  max = ( 607.66250, 232.89375, 699.31250)
+
+Auto-selected spawn (meters):
+  (169.999992, 8.267775, 301.476579)
+
+Generated test pack size:
+  3,728,204 bytes
+
+Determinism test:
+  SHA-256 build #1 = 9205b586b2048a92c41535c982242be8195d60bbc3e079c7a174182e290afcbf
+  SHA-256 build #2 = 9205b586b2048a92c41535c982242be8195d60bbc3e079c7a174182e290afcbf
+  RESULT: identical
+
+Portable C++ loader test:
+  PASS - version/counts/bounds/spawn reproduced exactly within float precision.
+
+Player collision smoke test:
+  simulation: 10 seconds at 120 Hz from generated spawn
+  final feet position = (169.948, 7.21403, 301.512) m
+  grounded = true
+  vertical velocity = 0
+  RESULT: player settles on recovered collision mesh instead of falling through.
+
+No generated runtime pack or extracted SOCOM geometry is intended for GitHub.
+Only source code, documentation, and non-copyrighted validation metadata should be committed.

@@ -345,3 +345,7 @@ SOCOM, PlayStation, and related trademarks and copyrights belong to their respec
 Useful contributions include improving parsers, validating structures against additional legally obtained builds, documenting GameZ formats, creating synthetic test fixtures, and implementing native runtime subsystems.
 
 Do not submit copyrighted game files or extracted proprietary assets.
+<!-- socom-native-project-status -->
+## Development Status
+
+The project is currently transitioning from format/renderer reconstruction to **incremental native recompilation of the retail SCUS_971.34 EE executable**. See [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) for the current reverse-engineering status, recovered mission lifecycle, and roadmap.

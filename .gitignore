@@ -56,3 +56,20 @@ Thumbs.db
 # Python/tool scratch
 __pycache__/
 *.pyc
+# Native runtime generated files
+*.snr
+generated/
+build/runtime/
+*.spr
+
+# --- socom-native local/generated content ---
+/.vs/
+*.pdb
+*.ilk
+*.exp
+# Retail / extracted SOCOM assets must remain local
+SCUS_971.34
+*.pss
+/disc/
+/game_data/
+/runtime_data/

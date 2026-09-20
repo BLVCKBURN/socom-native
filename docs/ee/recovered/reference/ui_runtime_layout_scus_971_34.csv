@@ -1,0 +1,13 @@
+base_or_offset,name,size,confidence,evidence
+0x004B31D8,ui_command_context_ptr,4,high,Loaded by SetMission/SwitchMenu before command-argument resolver 0x001CB780
+context+0x0018,dynamic_input_source,4,medium,Passed to 0x001CEAE0 when command argument is INPUT_STRING/missing
+context+0x0024,command_argument_storage,unknown,medium,Passed by 0x001CB780 to argument lookup helper 0x001C3AF0
+context+0x0034,command_context_handle,2,high,16-bit handle consumed by 0x001CB780
+0x004B3450,menu_state_storage,unknown,high,Base used directly by SwitchMenu
+menu+0x0000,command_records,0x820,high,40 records * 0x34 bytes
+menu_record+0x0000,record_type,4,high,SwitchMenu writes type 5 and type 2
+menu_record+0x0004,record_text,48,high,String copied here; total record size is 0x34
+menu+0x0820,pending_count,4,medium,Incremented when SwitchMenu queues a record
+menu+0x0824,record_index_or_count,4,medium,Incremented before selecting/writing 0x34-byte record
+menu+0x0828,stack_a_header,12+,high,Small vector-like object with count at +4 and data pointer at +8
+menu+0x0E34,stack_b_header,12+,high,Second small vector-like object receiving popped 32-bit values

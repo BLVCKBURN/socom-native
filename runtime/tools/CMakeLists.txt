@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.20)
+project(socom_runtime_tools LANGUAGES CXX)
+
+add_executable(runtime_pack_check runtime_pack_check.cpp)
+target_compile_features(runtime_pack_check PRIVATE cxx_std_17)
+if(MSVC)
+    target_compile_options(runtime_pack_check PRIVATE /W4 /permissive- /EHsc)
+else()
+    target_compile_options(runtime_pack_check PRIVATE -Wall -Wextra -Wpedantic)
+endif()
