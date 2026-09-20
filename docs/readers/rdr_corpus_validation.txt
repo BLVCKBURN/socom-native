@@ -1,0 +1,51 @@
+SCUS_971.34 compiled RDR corpus validation
+==========================================
+
+Archives / RDR leaves:
+  readerc(1).zar   27
+  readerc.zar      92
+  readerm(1).zar   15
+  readerm(2).zar   12
+  readerm(3).zar   51
+  readerm(4).zar   10
+  readerm.zar      12
+  readerx.zar       5
+  TOTAL           224
+
+Fresh deterministic recursive validation:
+  structurally valid: 224 / 224
+  maximum depth: 13
+  observed tags: 1, 2, 3, 4 only
+  invalid pointer cells: 0
+  invalid string cells: 10
+  invalid-string file: readerc(1).zar / zweapon.rdr
+  invalid value: 0xFB95FFC0 (all 10 occurrences)
+
+Reachable cell census:
+  tag 1: 195002
+  tag 2:  33278
+  tag 3: 223874
+  tag 4: 163469
+
+List shape census:
+  scalar wrappers:  74353
+  record pairs:     37078
+  primitive lists:  19822
+  mixed lists:      12286
+  symbol lists:     10394
+  one-cell lists:    7433
+  pointer lists:     2327
+
+The 10 invalid strings are ZAMMO Description values for:
+  ID 11 M67 Ammo
+  ID 26 HE Grenade Ammo
+  ID 12 AN-M8 Ammo
+  ID 14 Mark141 Ammo
+  ID 16 Satchel Charge Ammo
+  ID 17 Claymore Ammo
+  ID 18 C4 Ammo
+  ID 19 MPBOMB Ammo
+  ID 24 ag_missile
+  ID 25 explosive_stuff
+
+All enclosing lists, ZAMMO records, IDs, and gameplay numeric fields remain valid.
