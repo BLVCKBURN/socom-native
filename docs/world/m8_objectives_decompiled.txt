@@ -1,0 +1,601 @@
+
+ANIMATION "objectives" {
+  SEQUENCE "start"  ; local_name_index=2 flags=0x102 {
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 03 00 00 00 00 00 00 00 02 02 00 00
+      QUAD_ALIGN  ; raw_args: 00 00 12 04  ; opcode_flags=0x100
+      HUD_LETTERBOX_OFF  ; raw_args: 05 00 00 00
+    ENDIF
+    TIMER  ; raw_args: 03 00 00 00 01 00 00 00 07 02 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+    OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+    OBJECT_DELETE_CHILD  ; raw_args: 07 c8 c8 c8 01 00 00 00 33 33 33 3f
+    WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: 08 00 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: 09 00 00 00
+    LIGHT  ; raw_args: 01 00 a4 02
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0a 00 00 00 63 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0b 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0c 00 00 00 03 00 00 00 05 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0d 00 00 00 01 00 00 00 02 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      INVALIDATE_ANIMATION "success"
+      CALL_SEQUENCE "start"
+    ENDIF
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0f 00 00 00 00 00 00 00 02 02 00 00
+      CALL_SEQUENCE "success"
+      OBJECT_DELETE_CHILD  ; raw_args: 10 c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 11 c8 c8 c8 01 00 00 00 33 33 33 3f
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 41
+      INVALIDATE_ANIMATION "failure"
+      CALL_SEQUENCE "start"
+    ELSEIF  ; raw_args: 01 00 00 00 2e 00 40 00 14 00 00 00 01 00 00 00 02 02 00 00
+      CALL_SEQUENCE "success"
+      OBJECT_DELETE_CHILD  ; raw_args: 10 c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 15 c8 c8 c8 01 00 00 00 33 33 33 3f
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      INVALIDATE_ANIMATION "failure"
+      CALL_SEQUENCE "start"
+    ELSEIF  ; raw_args: 01 00 00 00 2e 00 40 00 16 00 00 00 01 00 00 00 02 02 00 00
+      CALL_SEQUENCE "success"
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 17 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 10 c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 18 c8 c8 c8 01 00 00 00 33 33 33 3f
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      INVALIDATE_ANIMATION "failure"
+      CALL_SEQUENCE "start"
+    ENDIF
+    WHILE  ; raw_args: 00 00 b0 00
+  }
+  SEQUENCE "Insert"  ; local_name_index=25 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 3c 01
+    IF  ; raw_args: 01 00 00 00 15 02 90 00 00 00 00 00 40 32 68 06 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 1b c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 1c 00 00 00 01 00 00 00 07 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 1d 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      HUD_LETTERBOX_OFF  ; raw_args: 1e 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 1f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 20 00 00 00 00 00 00 00 02 02 00 00
+        OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 21 c8 c8 c8 01 00 00 00 33 33 33 3f
+      ENDIF
+      CALL_SEQUENCE "Insert"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sentry"  ; local_name_index=34 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 c4 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 23 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 70 00 00 00 00 00 07 00 00 00 4f 75 74 50 61 74 72 6f 6c 34 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 0a 02 70 00 00 00 00 00 09 00 00 00 4f 75 74 50 61 74 72 6f 6c 34 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 24 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 25 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Sentry"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Ambush_cover"  ; local_name_index=38 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 5c 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 23 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 70 00 00 00 00 00 07 00 00 00 4f 75 74 50 61 74 72 6f 6c 34 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 0a 02 70 00 00 00 00 00 09 00 00 00 4f 75 74 50 61 74 72 6f 6c 34 00 00 00 00 00 00
+      TIMER  ; raw_args: 27 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Ambush_cover"
+    ELSEIF  ; raw_args: 01 00 00 00 15 02 90 00 00 00 00 00 40 30 08 0b 00 00 00 00 00 00 00 00 fd ff ff ff 42 61 69 6c 65 79 00 00 00 00 00 00 1e 00 22 00 02 00 00 00 15 02 90 00 00 00 00 00 40 30 08 0b 00 00 00 00 00 00 00 00 fd ff ff ff 44 69 4d 6f 6e 65 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 28 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 29 00 00 00 01 00 00 00 07 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 2a 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 2b 00 00 00
+      CALL_SEQUENCE "Ambush_cover"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Player_Ambush"  ; local_name_index=44 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 74 00
+    IF  ; raw_args: 01 00 00 00 15 02 90 00 00 00 00 00 40 30 08 0b 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 2d 00 00 00
+      CALL_SEQUENCE "Player_Ambush"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Hostagewarn"  ; local_name_index=46 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 cc 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 2f 00 00 00 03 00 00 00 06 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 30 00 00 00 01 00 00 00 02 02 00 00
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 31 00 00 00 00 00 00 00 02 02 00 00
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 35 31 00 00 00 00 00 00  ; opcode_flags=0x200
+        OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 32 c8 c8 c8 01 00 00 00 33 33 33 3f
+      ENDIF
+      CALL_SEQUENCE "Hostagewarn"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Computer"  ; local_name_index=51 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 9c 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0a 00 00 00 63 00 00 00 02 02 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 34 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 20 00 00 00 01 00 00 00 07 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 1d 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 0d 00 00 00 00 00 00 00 02 02 00 00
+        DESTRUCTION_SOURCE  ; raw_args: 80 00 35 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        WAIT  ; raw_args: 09 00 00 00 00 00 20 41
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 36 31 00 00 00 00 00 00  ; opcode_flags=0x200
+        OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 36 c8 c8 c8 01 00 00 00 33 33 33 3f
+      ENDIF
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 31 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0f 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 16 00 00 00 01 00 00 00 01 02 00 00
+        QUAD_ALIGN  ; raw_args: 00 00 12 37  ; opcode_flags=0x100
+      ENDIF
+      INVALIDATE_ANIMATION "SnowMob1"
+      CALL_SEQUENCE "Computer"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Crates"  ; local_name_index=57 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 74 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0c 00 00 00 03 00 00 00 02 02 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 3a c8 c8 c8 01 00 00 00 33 33 33 3f
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 3b c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 3c 00 00 00 01 00 00 00 07 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 1d 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      IF  ; raw_args: 02 00 00 00 09 00 22 00 00 00 00 3f
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 35 35 00 00 00 00 00 00  ; opcode_flags=0x200
+      ELSE
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 48 75 74 63 68 69 6e 73 00 53 4e 44 5f 56 4d 30 38 5f 35 38 00 00 00 00  ; opcode_flags=0x200
+      ENDIF
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 31 00 00 00 00 00 00 00 02 02 00 00
+        OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 3d c8 c8 c8 01 00 00 00 33 33 33 3f
+      ENDIF
+      CALL_SEQUENCE "Crates"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Crate1"  ; local_name_index=62 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 c8 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0c 00 00 00 01 00 00 00 02 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 3f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 40 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 41 00 00 00 01 00 00 00 07 02 00 00
+      TIMER  ; raw_args: 42 00 00 00 01 00 00 00 07 02 00 00
+      IF  ; raw_args: 00 00 00 00 0d 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        OBJECT_TRANSLATE_STATE  ; raw_args: 00 00 00 00 07 00 07 00 00 00 00 40 4c 65 61 64 65 72 00 00 00 00 00 00  ; opcode_flags=0x200
+        CALL_SEQUENCE "Crate1"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Crate2"  ; local_name_index=67 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 7c 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 0c 00 00 00 02 00 00 00 02 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 44 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 45 c8 c8 c8 01 00 00 00 33 33 33 3f
+      CALL_SEQUENCE "Crate2"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Compound"  ; local_name_index=70 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 20 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 47 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 48 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 49 00 00 00 01 00 00 00 02 02 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 4a c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 0d 00 00 00 01 00 00 00 07 02 00 00
+      IF  ; raw_args: 02 00 00 00 1e 00 22 00 01 00 00 00 2e 00 40 00 0c 00 00 00 03 00 00 00 02 02 00 00
+        WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+        DESTRUCTION_SOURCE  ; raw_args: 80 00 4b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 4c c8 c8 c8 01 00 00 00 33 33 33 3f
+      ENDIF
+      CALL_SEQUENCE "Compound"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "LodgePrompt"  ; local_name_index=77 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 80 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 4e 00 00 00 00 00 00 00 02 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 4f 00 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "LodgePrompt"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Lodge"  ; local_name_index=81 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a8 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 c0 2c 98 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 4e 00 00 00 00 00 00 00 02 02 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 52 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 47 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "LodgePrompt"
+      CALL_SEQUENCE "Lodge"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "SnowPrompt"  ; local_name_index=83 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 f8 00
+    IF  ; raw_args: 01 00 00 00 1e 00 22 00 04 00 00 00 2e 00 40 00 54 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 6e 6f 77 31 00 00 00 00 00 00 00 1e 00 22 00 05 00 00 00 1e 00 22 00 02 00 00 00 1e 00 22 00 04 00 00 00 2e 00 40 00 55 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 6e 6f 77 32 00 00 00 00 00 00 00 1e 00 22 00 05 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 4f 00 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 56 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "SnowPrompt"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Snow"  ; local_name_index=87 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 20 01
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 40 19 e0 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 02 00 00 00 1e 00 22 00 04 00 00 00 2e 00 40 00 54 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 6e 6f 77 31 00 00 00 00 00 00 00 1e 00 22 00 05 00 00 00 1e 00 22 00 02 00 00 00 1e 00 22 00 04 00 00 00 2e 00 40 00 55 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 6e 6f 77 32 00 00 00 00 00 00 00 1e 00 22 00 05 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 58 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 48 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "SnowPrompt"
+      CALL_SEQUENCE "Snow"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Cabin"  ; local_name_index=89 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 8c 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 5a 00 00 00 02 00 00 00 02 02 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 5b c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 49 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Cabin2Prompt"
+      CALL_SEQUENCE "Cabin2"
+      CALL_SEQUENCE "Cabin"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Cabin2Prompt"  ; local_name_index=92 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a0 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 5e 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 68 65 64 31 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 4f 00 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 5f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "Cabin2Prompt"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Cabin2"  ; local_name_index=93 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 e0 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 80 1b f0 07 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 02 00 00 00 1e 00 22 00 04 00 00 00 2e 00 40 00 5e 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 68 65 64 31 00 00 00 00 00 00 00 1e 00 22 00 05 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 60 c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 49 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Cabin2Prompt"
+      CALL_SEQUENCE "Cabin"
+      CALL_SEQUENCE "Cabin2"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Hutchins_killed"  ; local_name_index=97 flags=0x102 {
+    LIGHT  ; raw_args: 00 00 34 00 2e 00 40 00 62 00 00 00 00 00 00 00 01 02 00 00
+    WHILE  ; raw_args: 00 00 1c 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 63 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "Hutchins_killed"
+  }
+  SEQUENCE "Bailey_killed"  ; local_name_index=101 flags=0x102 {
+    LIGHT  ; raw_args: 00 00 34 00 2e 00 40 00 66 00 00 00 00 00 00 00 01 02 00 00
+    WHILE  ; raw_args: 00 00 1c 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 63 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "Bailey_killed"
+  }
+  SEQUENCE "DiMone_killed"  ; local_name_index=103 flags=0x102 {
+    LIGHT  ; raw_args: 00 00 34 00 2e 00 40 00 68 00 00 00 00 00 00 00 01 02 00 00
+    WHILE  ; raw_args: 00 00 1c 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 00 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 63 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      CALL_SEQUENCE "DiMone_killed"
+  }
+  SEQUENCE "Bravo_cover"  ; local_name_index=105 flags=0x104 {
+    LIGHT  ; raw_args: 01 00 e0 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 41 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 20 00 00 00 01 00 00 00 02 02 00 00
+      TIMER  ; raw_args: 6a 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Bravo_cover"
+    ELSEIF  ; raw_args: 01 00 00 00 2e 00 40 00 66 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 68 00 00 00 00 00 00 00 02 02 00 00
+      TIMER  ; raw_args: 6a 00 00 00 01 00 00 00 07 02 00 00
+      CALL_SEQUENCE "Bravo_cover"
+    ENDIF
+    IF  ; raw_args: 01 00 00 00 1e 00 22 00 04 00 00 00 15 02 90 00 00 00 00 00 40 14 78 02 00 00 00 00 00 00 00 00 fd ff ff ff 42 61 69 6c 65 79 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 66 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 05 00 00 00 1e 00 22 00 02 00 00 00 1e 00 22 00 04 00 00 00 15 02 90 00 00 00 00 00 40 14 78 02 00 00 00 00 00 00 00 00 fd ff ff ff 44 69 4d 6f 6e 65 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 68 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 05 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 6b c8 c8 c8 01 00 00 00 33 33 33 3f
+      DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 35 39 00 00 00 00 00 00  ; opcode_flags=0x200
+      TIMER  ; raw_args: 6c 00 00 00 01 00 00 00 07 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 20 41
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 6d 00 00 00
+      CALL_SEQUENCE "Bravo_cover"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "RestrainKola"  ; local_name_index=110 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 5c 01
+    IF  ; raw_args: 01 00 00 00 0a 02 60 00 00 00 00 00 09 00 00 00 53 6e 6f 77 33 00 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 0a 02 60 00 00 00 00 00 07 00 00 00 53 6e 6f 77 33 00 00 00 00 00 00 00
+      CALL_SEQUENCE "Hostagewarn"
+      OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 6f c8 c8 c8 01 00 00 00 33 33 33 3f
+      TIMER  ; raw_args: 70 00 00 00 01 00 00 00 07 02 00 00
+      TIMER  ; raw_args: 31 00 00 00 01 00 00 00 07 02 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 08 1d 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 72 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      OBJECT_DELETE_CHILD  ; raw_args: 06 c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 73 c8 c8 c8 01 00 00 00 33 33 33 3f
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 74 00 00 00
+      CALL_SEQUENCE "RestrainKola"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Extract"  ; local_name_index=117 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 80 01
+    IF  ; raw_args: 01 00 00 00 0a 02 60 00 00 00 00 00 11 00 00 00 53 6e 6f 77 33 00 00 00 00 00 00 00
+      TIMER  ; raw_args: 0b 00 00 00 01 00 00 00 07 02 00 00
+      QUAD_ALIGN  ; raw_args: 00 00 95 76  ; opcode_flags=0x100
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 0a 00 00 00 63 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0b 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0c 00 00 00 03 00 00 00 05 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 0d 00 00 00 01 00 00 00 02 02 00 00
+        TIMER  ; raw_args: 77 00 00 00 01 00 00 00 07 02 00 00
+        INVALIDATE_ANIMATION "success"
+        CALL_SEQUENCE "start"
+      ENDIF
+      TIMER  ; raw_args: 78 00 00 00 01 00 00 00 07 02 00 00
+      TIMER  ; raw_args: 41 00 00 00 01 00 00 00 07 02 00 00
+      TIMER  ; raw_args: 42 00 00 00 01 00 00 00 07 02 00 00
+      IF  ; raw_args: 00 00 00 00 0d 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        OBJECT_TRANSLATE_STATE  ; raw_args: 00 00 00 00 07 00 07 00 00 00 00 40 4c 65 61 64 65 72 00 00 00 00 00 00  ; opcode_flags=0x200
+        TIMER  ; raw_args: 77 00 00 00 01 00 00 00 07 02 00 00
+        OBJECT_DELETE_CHILD  ; raw_args: 1a c8 c8 c8 01 00 00 00 66 66 66 3f
+        OBJECT_DELETE_CHILD  ; raw_args: 79 c8 c8 c8 01 00 00 00 33 33 33 3f
+        CALL_SEQUENCE "Extract"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Bonus"  ; local_name_index=122 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 b4 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 7b 00 00 00 00 00 00 00 02 02 00 00
+      IF  ; raw_args: 02 00 00 00 2e 00 40 00 7c 00 00 00 01 00 00 00 02 02 00 00
+        OBJECT_DELETE_CHILD  ; raw_args: 7d c8 c8 c8 01 00 00 00 33 33 33 3f
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 44 69 4d 6f 6e 65 00 53 4e 44 5f 56 4d 30 38 5f 32 33 00 00 00 00 00 00  ; opcode_flags=0x200
+        CALL_SEQUENCE "Bonus"
+      ELSE
+        CALL_SEQUENCE "Bonus"
+      ENDIF
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper1"  ; local_name_index=126 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 90 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 c0 26 50 08 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 0a 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        DESTRUCTION_SOURCE  ; raw_args: 80 04 1f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        CALL_SEQUENCE "Sleeper2"
+        CALL_SEQUENCE "Sleeper1"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper2"  ; local_name_index=127 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a8 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 00 26 18 06 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 80 00 00 00 01 00 00 00 05 02 00 00
+      IF  ; raw_args: 00 00 00 00 0a 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        DESTRUCTION_SOURCE  ; raw_args: 80 04 1f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        CALL_SEQUENCE "Sleeper1"
+        CALL_SEQUENCE "Sleeper2"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper3"  ; local_name_index=129 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a8 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 40 29 38 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 82 00 00 00 01 00 00 00 05 02 00 00
+      IF  ; raw_args: 00 00 00 00 0b 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        HUD_STOP_DEFUSE_TIMER  ; raw_args: 83 00 00 00
+        DESTRUCTION_SOURCE  ; raw_args: 80 04 84 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        CALL_SEQUENCE "Sleeper3"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper4"  ; local_name_index=133 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a0 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 00 14 78 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 86 00 00 00 01 00 00 00 05 02 00 00
+      IF  ; raw_args: 00 00 00 00 0c 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        DESTRUCTION_SOURCE  ; raw_args: 80 04 87 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        CALL_SEQUENCE "Sleeper4"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper5"  ; local_name_index=136 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a8 01
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 00 0e 00 01 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      DESTRUCTION_SOURCE  ; raw_args: 80 04 89 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 0d 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        IF  ; raw_args: 02 00 00 00 2e 00 40 00 66 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 68 00 00 00 01 00 00 00 02 02 00 00
+          IF  ; raw_args: 03 00 00 00 09 00 22 00 00 00 00 3f
+            DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 48 75 74 63 68 69 6e 73 00 53 4e 44 5f 56 4d 30 38 5f 35 30 00 00 00 00  ; opcode_flags=0x200
+          ELSE
+            DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 44 69 4d 6f 6e 65 00 53 4e 44 5f 56 4d 30 38 5f 35 36 00 00 00 00 00 00  ; opcode_flags=0x200
+          ENDIF
+          IF  ; raw_args: 03 00 00 00 2e 00 40 00 6c 00 00 00 00 00 00 00 02 02 00 00
+            HUD_STOP_DEFUSE_TIMER  ; raw_args: 8a 00 00 00
+            OBJECT_DELETE_CHILD  ; raw_args: 8b c8 c8 c8 01 00 00 00 66 66 66 3f
+            OBJECT_DELETE_CHILD  ; raw_args: 8c c8 c8 c8 01 00 00 00 33 33 33 3f
+          ENDIF
+          INVALIDATE_ANIMATION "Bravo_cover"
+          TIMER  ; raw_args: 8d 00 00 00 01 00 00 00 07 02 00 00
+        ELSE
+          TIMER  ; raw_args: 6a 00 00 00 01 00 00 00 07 02 00 00
+        ENDIF
+        CALL_SEQUENCE "Sleeper5"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper6"  ; local_name_index=142 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 c0 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 00 00 00 08 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 70 00 00 00 00 00 00 2e 20 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 70 00 00 00 00 00 c0 31 00 06 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 09 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        IF  ; raw_args: 00 00 00 00 0e 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+          CALL_SEQUENCE "Sleeper6"
+        ENDIF
+        WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper7"  ; local_name_index=143 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 d8 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 80 2a b8 02 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 0d 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        IF  ; raw_args: 02 00 00 00 09 00 22 00 00 00 00 3f
+          DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 31 36 00 00 00 00 00 00  ; opcode_flags=0x200
+        ELSE
+          DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 44 69 4d 6f 6e 65 00 53 4e 44 5f 56 4d 30 38 5f 31 37 00 00 00 00 00 00  ; opcode_flags=0x200
+        ENDIF
+        CALL_SEQUENCE "Sleeper7"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper8"  ; local_name_index=144 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 88 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 01 07 78 00 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 0f 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        DESTRUCTION_SOURCE  ; raw_args: 80 04 91 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        CALL_SEQUENCE "Sleeper8"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Sleeper9"  ; local_name_index=146 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 74 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 02 04 30 00 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 41
+      IF  ; raw_args: 00 00 00 00 06 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        CALL_SEQUENCE "Sleeper9"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "SpotKola"  ; local_name_index=147 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 f8 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 30 00 00 00 00 00 00 00 02 02 00 00
+      CALL_SEQUENCE "SpotKola"
+    ELSEIF  ; raw_args: 01 00 00 00 0b 02 90 00 00 00 00 00 00 00 00 00 00 00 00 00 70 6c 61 79 65 72 00 53 6e 6f 77 33 00 00 00 00 00 00 00 00
+      IF  ; raw_args: 02 00 00 00 09 00 22 00 00 00 00 3f
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 42 61 69 6c 65 79 00 53 4e 44 5f 56 4d 30 38 5f 31 38 00 00 00 00 00 00  ; opcode_flags=0x200
+      ELSE
+        DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 44 69 4d 6f 6e 65 00 53 4e 44 5f 56 4d 30 38 5f 31 39 00 00 00 00 00 00  ; opcode_flags=0x200
+      ENDIF
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 94 00 00 00
+      CALL_SEQUENCE "SpotKola"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "KillKola"  ; local_name_index=149 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 b0 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 30 00 00 00 00 00 00 00 02 02 00 00
+      CALL_SEQUENCE "success"
+      OBJECT_DELETE_CHILD  ; raw_args: 10 c8 c8 c8 01 00 00 00 66 66 66 3f
+      OBJECT_DELETE_CHILD  ; raw_args: 96 c8 c8 c8 01 00 00 00 33 33 33 3f
+      DESTRUCTION_SOURCE  ; raw_args: 80 00 97 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 a0 40
+      INVALIDATE_ANIMATION "failure"
+      CALL_SEQUENCE "RestrainKola"
+      CALL_SEQUENCE "KillKola"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Out1"  ; local_name_index=152 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 80 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 99 00 00 00 01 00 00 00 02 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 40 40
+      DESTRUCTION_SOURCE  ; raw_args: 00 00 00 00 24 02 02 00 00 00 00 00 48 75 74 63 68 69 6e 73 00 53 4e 44 5f 56 4d 30 38 5f 36 33 00 00 00 00  ; opcode_flags=0x200
+      CALL_SEQUENCE "Out1"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "SnowMob1"  ; local_name_index=56 flags=0x104 {
+    LIGHT  ; raw_args: 01 00 f4 00
+    IF  ; raw_args: 01 00 00 00 15 02 90 00 00 00 00 00 40 1b f8 01 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 90 00 00 00 00 00 c0 1a 20 01 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 90 00 00 00 00 00 c0 1a 30 01 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 90 00 00 00 00 00 80 26 28 01 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00
+      INVALIDATE_ANIMATION "SnowMob2"
+      INVALIDATE_ANIMATION "MidTop"
+      CALL_SEQUENCE "SnowMob1"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "SnowMob2"  ; local_name_index=154 flags=0x104 {
+    LIGHT  ; raw_args: 01 00 80 00
+    IF  ; raw_args: 01 00 00 00 1e 00 22 00 01 00 00 00 15 02 90 00 00 00 00 00 00 0e 00 01 00 00 00 00 00 00 00 00 fd ff ff ff 70 6c 61 79 65 72 00 00 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 07 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        QUAD_ALIGN  ; raw_args: 00 00 95 9c  ; opcode_flags=0x100
+        CALL_SEQUENCE "SnowMob2"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "MidTop"  ; local_name_index=155 flags=0x104 {
+    LIGHT  ; raw_args: 01 00 8c 00
+    IF  ; raw_args: 01 00 00 00 15 02 70 00 00 00 00 00 00 00 20 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 1e 00 22 00 03 00 00 00 15 02 70 00 00 00 00 00 00 2e 18 04 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00
+      IF  ; raw_args: 00 00 00 00 05 00 00 00 1b 00 00 00  ; opcode_flags=0x200
+        CALL_SEQUENCE "MidTop"
+      ENDIF
+      WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "Timer"  ; local_name_index=157 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 40 01
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 41 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 42 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 9e 00 00 00 00 00 00 00 02 02 00 00
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 9f 00 00 00
+      OBJECT_ADD_CHILD  ; raw_args: 06 00 00 00 00 00 54 42
+      TIMER  ; raw_args: a0 00 00 00 01 00 00 00 07 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 54 42
+      CALL_SEQUENCE "LeadTimer"
+      CALL_SEQUENCE "Timer"
+    ELSEIF  ; raw_args: 01 00 00 00 2e 00 40 00 41 00 00 00 01 00 00 00 02 02 00 00 1e 00 22 00 02 00 00 00 2e 00 40 00 9e 00 00 00 00 00 00 00 02 02 00 00
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: 9f 00 00 00
+      OBJECT_ADD_CHILD  ; raw_args: 06 00 00 00 00 00 28 43
+      WAIT  ; raw_args: 09 00 00 00 00 00 e6 42
+      TIMER  ; raw_args: a0 00 00 00 01 00 00 00 07 02 00 00
+      TIMER  ; raw_args: 42 00 00 00 01 00 00 00 07 02 00 00
+      WAIT  ; raw_args: 09 00 00 00 00 00 54 42
+      CALL_SEQUENCE "LeadTimer"
+      CALL_SEQUENCE "Timer"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "LeadTimer"  ; local_name_index=161 flags=0x102 {
+    LIGHT  ; raw_args: 01 00 a0 00
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 a2 00 00 00 00 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 a3 00 00 00 04 00 00 00 02 02 00 00 1e 00 22 00 03 00 00 00 2e 00 40 00 20 00 00 00 01 00 00 00 02 02 00 00
+      TIMER  ; raw_args: 9e 00 00 00 01 00 00 00 07 02 00 00
+      OBJECT_ADD_CHILD  ; raw_args: 06 00 00 00 00 00 80 bf
+      CALL_SEQUENCE "Timer"
+      CALL_SEQUENCE "LeadTimer"
+    ENDIF
+    WHILE  ; raw_args: 00 00 1c 00
+  }
+  SEQUENCE "PopupTimers"  ; local_name_index=164 flags=0x102 {
+    WAIT  ; raw_args: 09 00 00 00 00 00 70 42
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: a5 00 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 f0 41
+    IF  ; raw_args: 01 00 00 00 2e 00 40 00 1c 00 00 00 00 00 00 00 02 02 00 00
+      HUD_STOP_DEFUSE_TIMER  ; raw_args: a6 00 00 00
+    ENDIF
+    WAIT  ; raw_args: 09 00 00 00 00 00 f0 41
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: a7 00 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 70 42
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: a8 00 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 70 42
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: a9 00 00 00
+    WAIT  ; raw_args: 09 00 00 00 00 00 70 42
+    HUD_STOP_DEFUSE_TIMER  ; raw_args: aa 00 00 00
+    CALL_SEQUENCE "PopupTimers"
+  }
+  SEQUENCE "success"  ; local_name_index=14 flags=0x104 {
+    TIMER  ; raw_args: ab 00 00 00 01 00 00 00 07 02 00 00
+    QUAD_ALIGN  ; raw_args: 00 00 12 ac  ; opcode_flags=0x100
+    TIMER  ; raw_args: ad 00 00 00 01 00 00 00 07 02 00 00
+    CALL_SEQUENCE "start"
+  }
+  SEQUENCE "failure"  ; local_name_index=19 flags=0x104 {
+    TIMER  ; raw_args: ae 00 00 00 01 00 00 00 07 02 00 00
+    CALL_SEQUENCE "start"
+  }
+}
