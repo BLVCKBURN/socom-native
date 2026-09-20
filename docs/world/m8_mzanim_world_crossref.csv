@@ -1,0 +1,286 @@
+animation_index,animation_name,symbol_count,symbols,scene_match_count,scene_matches,meaningful_scene_matches,seq_data_size
+0,Hutchins_special,3,NA | Hutchins_special | seq_0,0,,,40
+1,Bailey_special,3,NA | Bailey_special | seq_0,0,,,40
+2,DiMone_special,3,NA | DiMone_special | seq_0,0,,,40
+3,OutPatrol1_special,3,NA | OutPatrol1_special | seq_0,0,,,40
+4,OutPatrol1_start,18,NA | OutPatrol1_start | startup | comerunning | on_aware0 | OutPatrol5_valve_alive | OutPatrol5_valve_aware | converse3 | converse4 | converse5 | on_aware1 | on_aware2 | Out1 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2600
+5,OutPatrol2_special,3,NA | OutPatrol2_special | seq_0,0,,,40
+6,OutPatrol2_start,14,NA | OutPatrol2_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | call_out | Out2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2088
+7,OutPatrol3_special,3,NA | OutPatrol3_special | seq_0,0,,,40
+8,OutPatrol3_start,15,NA | OutPatrol3_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | call_out | Out3 | Out3Run | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,3304
+9,OutPatrol4_special,3,NA | OutPatrol4_special | seq_0,0,,,40
+10,OutPatrol4_start,14,NA | OutPatrol4_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | call_out | Out4 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2648
+11,OutPatrol5_special,3,NA | OutPatrol5_special | seq_0,0,,,40
+12,OutPatrol5_start,18,NA | OutPatrol5_start | startup | comerunning | on_aware0 | OutPatrol1_valve_alive | OutPatrol1_valve_aware | converse3 | converse4 | converse5 | on_aware1 | on_aware2 | Out5 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2664
+13,OutPatrol6_special,3,NA | OutPatrol6_special | seq_0,0,,,40
+14,OutPatrol6_start,17,NA | OutPatrol6_start | startup | comerunning | on_aware0 | OutPatrol7_valve_alive | OutPatrol7_valve_aware | converse6 | converse7 | on_aware1 | on_aware2 | Out6 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2616
+15,OutPatrol7_special,3,NA | OutPatrol7_special | seq_0,0,,,40
+16,OutPatrol7_start,17,NA | OutPatrol7_start | startup | comerunning | on_aware0 | OutPatrol6_valve_alive | OutPatrol6_valve_aware | converse6 | converse7 | on_aware1 | on_aware2 | Out7 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2728
+17,OutPatrol8_special,3,NA | OutPatrol8_special | seq_0,0,,,40
+18,OutPatrol8_start,16,NA | OutPatrol8_start | startup | comerunning | on_aware0 | barrel | Snow1_valve_alive | converse1 | on_aware1 | on_aware2 | Out8 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,3528
+19,Shed1_special,3,NA | Shed1_special | seq_0,0,,,40
+20,Shed1_start,13,NA | Shed1_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | shed1 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2856
+21,Shed2_special,3,NA | Shed2_special | seq_0,0,,,40
+22,Shed2_start,16,NA | Shed2_start | startup | crapper | comerunning | on_aware0 | outhouse1 | outhack | SND_PEE | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,1,outhouse1,outhouse1,3288
+23,Bunk1_special,3,NA | Bunk1_special | seq_0,0,,,40
+24,Bunk1_start,19,NA | Bunk1_start | startup | comerunning | on_aware0 | Bunk2_valve_alive | Bunk2_valve_aware | talkwait | converse8 | converse9 | converse10 | on_aware1 | on_aware2 | bunk1 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2520
+25,Bunk2_special,3,NA | Bunk2_special | seq_0,0,,,40
+26,Bunk2_start,19,NA | Bunk2_start | startup | comerunning | on_aware0 | Bunk1_valve_alive | Bunk1_valve_aware | talkwait | converse8 | converse9 | converse10 | on_aware1 | on_aware2 | bunk2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2920
+27,Snow1_special,3,NA | Snow1_special | seq_0,0,,,40
+28,Snow1_start,17,NA | Snow1_start | startup | barrel | comerunning | on_aware0 | OutPatrol8_valve_alive | converse1 | on_aware1 | on_aware2 | snow1 | snow1alt | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,3256
+29,Snow2_special,3,NA | Snow2_special | seq_0,0,,,40
+30,Snow2_start,23,NA | Snow2_start | startup | comerunning | outhouse | outhouse2 | on_aware0 | OutPatrol9_valve_alive | converse2 | Snow3_valve_alive | Snow3_valve_aware | talkwait2 | converse11 | converse12 | converse13 | on_aware1 | on_aware2 | snow2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,1,outhouse2,outhouse2,3688
+31,Snow3_special,3,NA | Snow3_special | seq_0,0,,,40
+32,Snow3_start,21,NA | Snow3_start | startup | comerunning | outhouse | outhouse2 | on_aware0 | Snow2_valve_alive | Snow2_valve_aware | talkwait2 | converse11 | converse12 | converse13 | on_aware1 | on_aware2 | snow3 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,1,outhouse2,outhouse2,2856
+33,Snow3_ambient,4,NA | Snow3_ambient | Helicopter | extractsync,0,,,156
+34,Dredge1_special,3,NA | Dredge1_special | seq_0,0,,,40
+35,Dredge1_start,12,NA | Dredge1_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,3848
+36,Dredge2_special,3,NA | Dredge2_special | seq_0,0,,,40
+37,Dredge2_start,16,NA | Dredge2_start | startup | comerunning | generator | generator_off | on_aware0 | SND_VOC_076 | SND_VOC_060 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,3992
+38,Leader_special,3,NA | Leader_special | seq_0,0,,,40
+39,Leader_start,21,NA | Leader_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | Spotted | TimerRun | SinglePlay | manual_alarm | looping_docs | react | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse | m8tut6 | run/movies/m8/ddata.pss | nodocs,0,,,3232
+40,Sniper1_special,3,NA | Sniper1_special | seq_0,0,,,40
+41,Sniper1_start,12,NA | Sniper1_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2824
+42,Sniper2_special,3,NA | Sniper2_special | seq_0,0,,,40
+43,Sniper2_start,12,NA | Sniper2_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2824
+44,Dredge3_special,3,NA | Dredge3_special | seq_0,0,,,40
+45,Dredge3_start,12,NA | Dredge3_start | startup | comerunning | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2952
+46,Bunk3_special,3,NA | Bunk3_special | seq_0,0,,,40
+47,Bunk3_start,16,NA | Bunk3_start | startup | comerunning | idling | Bunk1_valve_alive | Bunk2_valve_alive | on_aware0 | on_aware1 | on_aware2 | bunk3 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,2360
+48,OutPatrol9_special,3,NA | OutPatrol9_special | seq_0,0,,,40
+49,OutPatrol9_start,16,NA | OutPatrol9_start | startup | comerunning | on_aware0 | outhouse2 | Snow2_valve_alive | converse2 | on_aware1 | on_aware2 | Out9 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,1,outhouse2,outhouse2,3224
+50,Snowrider2_special,3,NA | Snowrider2_special | seq_0,0,,,40
+51,Snowrider2_start,11,NA | Snowrider2_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,852
+52,LeaderBud1_special,3,NA | LeaderBud1_special | seq_0,0,,,40
+53,LeaderBud1_start,11,NA | LeaderBud1_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,780
+54,Help1_special,3,NA | Help1_special | seq_0,0,,,40
+55,Help1_start,11,NA | Help1_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1080
+56,Help2_special,3,NA | Help2_special | seq_0,0,,,40
+57,Help2_start,12,NA | Help2_start | startup | on_aware0 | Help2Pos | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1128
+58,Alarm1_special,3,NA | Alarm1_special | seq_0,0,,,40
+59,Alarm1_start,12,NA | Alarm1_start | startup | on_aware0 | Alarm1 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1496
+60,Alarm3_special,3,NA | Alarm3_special | seq_0,0,,,40
+61,Alarm3_start,12,NA | Alarm3_start | startup | on_aware0 | Alarm3 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1544
+62,Alarm2_special,3,NA | Alarm2_special | seq_0,0,,,40
+63,Alarm2_start,12,NA | Alarm2_start | startup | on_aware0 | Alarm2 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1496
+64,Rush1_special,3,NA | Rush1_special | seq_0,0,,,40
+65,Rush1_start,11,NA | Rush1_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1064
+66,Rush3_special,3,NA | Rush3_special | seq_0,0,,,40
+67,Rush3_start,11,NA | Rush3_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1064
+68,Rush4_special,3,NA | Rush4_special | seq_0,0,,,40
+69,Rush4_start,11,NA | Rush4_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1064
+70,Rush5_special,3,NA | Rush5_special | seq_0,0,,,40
+71,Rush5_start,11,NA | Rush5_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1064
+72,Wait1_special,3,NA | Wait1_special | seq_0,0,,,40
+73,Wait1_start,11,NA | Wait1_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1400
+74,Wait3_special,3,NA | Wait3_special | seq_0,0,,,40
+75,Wait3_start,11,NA | Wait3_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1592
+76,Wait2_special,3,NA | Wait2_special | seq_0,0,,,40
+77,Wait2_start,11,NA | Wait2_start | startup | on_aware0 | on_aware1 | on_aware2 | on_aware3 | on_aware4 | on_lowhealth | on_noammo | on_corpse,0,,,1400
+78,player_special,3,NA | player_special | seq_0,0,,,40
+79,objectives,175,NA | objectives | start | ReplayMissionMusic | run/movies/0122.pss | m8bs | CURRENT OBJECTIVE: | INSERT INTO THE MISSION AREA | M08_TCM_02 | M08_HIDE | intelobj | extract | cratecount | POBJ5 | success | player_valve_alive | MISSION FAILURE: | PLAYER DEATH | MUS_PLAYER_DEATH | failure | nodocs | DOCUMENTS DESTROYED | aiteam_01 | SNDGROUP_HQ_DEAD_TEAM | YOUR SEAL TEAM HAS BEEN INCAPACITATED | Insert | OBJECTIVE COMPLETED: | INSERTION ACHIEVED | POBJ4 | MUS_OBJ_COMPLETE | m8tut2 | MUS_ALASKA | POBJ1 | SECURE THE TERRORIST'S LAPTOP COMPUTER | Sentry | OutPatrol4_valve_alive | SENTRY NEUTRALIZED | SOBJ1 | Ambush_cover | SOBJ10Fail | BRAVO MOVED TO CHARLIE | SOBJ10 | M08_GOTO_TACMAP | M08_NAV_POINTS | Player_Ambush | M08_KILL_SENTRY | Hostagewarn | aiteam_04 | Snow3_valve_alive | POBJ3 | CAPTURE TERRORIST FOR QUESTIONING | Computer | INTEL RECOVERED | SND_VM08_78 | SECURE COMPOUND | run/movies/m8/pincushn.pss | SnowMob1 | Crates | THIRD SUPPLY CACHE DESTROYED | SUPPLIES DESTROYED | POBJ2 | SECURE PINCUSHION | Crate1 | SND_VM08_73 | FIRST SUPPLY CACHE DESTROYED | comerunning | Spotted | Crate2 | SND_VM08_74 | SECOND SUPPLY CACHE DESTROYED | Compound | SOBJ2 | SOBJ3 | SOBJ4 | COMPOUND SECURE | SND_VM08_54 | DESTROY SUPPLY CACHES | LodgePrompt | aiteam_11 | M08_GUARDS_KILLED | SND_VM08_75 | Lodge | LODGE SECURE | SnowPrompt | Snow1_valve_alive | Snow2_valve_alive | SND_VM08_76A | Snow | MINING HOUSE SECURE | Cabin | CabinBreech | BRAVO CLEARED CABIN | Cabin2Prompt | Cabin2 | Shed1_valve_alive | SND_VM08_77 | CABIN SECURE | Hutchins_killed | Hutchins_valve_alive | MUS_BUDDY_DEATH | SND_VOC_B09 | Bailey_killed | Bailey_valve_alive | DiMone_killed | DiMone_valve_alive | Bravo_cover | SOBJ9Fail | BRAVO COVERING DREDGE ENTRY | SOBJ9 | M08_TCM_01 | RestrainKola | PINCUSHION SECURED | hostage | SND_VM08_66 | SND_VM08_53 | ESCORT PINCUSHION TO THE EXTRACTION ZONE | M08_RADAR_01 | Extract | run/movies/m8/extract.pss | SOBJ6 | extractsync | TERRORIST EXTRACTED | Bonus | Shed2_valve_alive | outhouse1 | OUTHOUSE AMBUSH SUCCESSFUL | Sleeper1 | Sleeper2 | shedwindow | Sleeper3 | lodgewindow | M08_CREEPING | MUS_AK_STEALTH_02 | Sleeper4 | snowwindow | MUS_AK_STEALTH_03 | Sleeper5 | MUS_M8_CAMP | M08_DREDGE_ARRIVAL | NEW OBJECTIVE: | BRAVO COVER DREDGE ENTRY AT ZULU | SOBJ9Display | Sleeper6 | Sleeper7 | Sleeper8 | MUS_AMBUSH | Sleeper9 | SpotKola | M08_HELLO_PINCUSHION | KillKola | PINCUSHION KILLED | SND_VM08_57 | Out1 | out_count | SnowMob2 | MidTop | run/movies/m8/sriders.pss | Timer | TimerNull | M08_DATA_DESTRUCTION | TimerRun | LeadTimer | Leader_valve_alive | Leader_valve_aware | PopupTimers | M08_STANCE_01 | M08_RADAR_02 | M08_STANCE_02 | M08_USING_GRASS | M08_HEY_TACMAP | HELP_OFF | nofade | run/movies/0123.pss | mission_complete | mission_failure,1,outhouse1,outhouse1,10276
+80,deactivate_copter,4,NA | deactivate_copter | m8copter | fadetoblack,0,,,44
+81,m8extract,20,NA | m8extract | m8copter | SND_STREAM_AF1 | tweakparticle | coptersounds | turn_main_rotor | turn_tail_rotor | copter | camera | mission_complete | e1 | do_fadetoblack | SND_AM01_CHOPPER_ENGINE_LOOP | SND_AM01_CHOPPER_CHOP_LOOP | mainrotor | tailrotor | snoblo | effect_dustpuff01.tif | cloudpuff01.tif,0,,,1936
+82,do_fadetoblack,4,NA | do_fadetoblack | fadetoblack | camera,0,,,160
+83,m8objsetup,3,NA | m8objsetup | arrow1,1,arrow1,arrow1,36
+84,m8obj1,6,NA | m8obj1 | outdoor_clip | camera | drop_arrow | arrow1,2,drop_arrow | arrow1,drop_arrow | arrow1,600
+85,m8obj2,6,NA | m8obj2 | outdoor_clip | drop_arrow | camera | arrow1,2,drop_arrow | arrow1,drop_arrow | arrow1,444
+86,m8obj3,4,NA | m8obj3 | outdoor_clip | camera,0,,,344
+87,m8obj4,5,NA | m8obj4 | outdoor_clip | snow_falling | camera,0,,,388
+88,m8obj5,4,NA | m8obj5 | outdoor_clip | camera,0,,,344
+89,m8obj6,6,NA | m8obj6 | outdoor_clip | drop_arrow | camera | arrow1,2,drop_arrow | arrow1,drop_arrow | arrow1,448
+90,m8obj7a,4,NA | m8obj7a | outdoor_clip | camera,0,,,600
+91,m8obj8,4,NA | m8obj8 | outdoor_clip | camera,0,,,356
+92,m8obj9,4,NA | m8obj9 | outdoor_clip | camera,0,,,356
+93,m8obj10,4,NA | m8obj10 | outdoor_clip | camera,0,,,356
+94,m8obj11,6,NA | m8obj11 | outdoor_clip | Snow3 | snow_falling | camera,0,,,480
+95,m8obj13,6,NA | m8obj13 | outdoor_clip | drop_arrow | camera | arrow1,2,drop_arrow | arrow1,drop_arrow | arrow1,456
+96,m8obj14,4,NA | m8obj14 | outdoor_clip | camera,0,,,752
+97,arrow1,3,NA | arrow1 | drop_arrow,2,arrow1 | drop_arrow,arrow1 | drop_arrow,452
+98,action_reset,20,NA | action_reset | door_outhouse1 | door_outhouse2 | door_depot01 | door_tri01 | door_tri02 | door_tri03 | door_dredge01 | door_dredge02 | door_dredge03 | door_outbuild01 | door_shack | laptopscreen | alaska4d_computer | computer_action | screenglow | screensaver | alarm_action_plate | gen_fiddle_switch,18,door_outhouse1 | door_outhouse2 | door_depot01 | door_tri01 | door_tri02 | door_tri03 | door_dredge01 | door_dredge02 | door_dredge03 | door_outbuild01 | door_shack | laptopscreen | alaska4d_computer | computer_action | screenglow | screensaver | alarm_action_plate | gen_fiddle_switch,door_outhouse1 | door_outhouse2 | door_depot01 | door_tri01 | door_tri02 | door_tri03 | door_dredge01 | door_dredge02 | door_dredge03 | door_outbuild01 | door_shack | laptopscreen | alaska4d_computer | computer_action | screenglow | screensaver | alarm_action_plate | gen_fiddle_switch,36
+99,m8tutsetup,3,NA | m8tutsetup | camcover,0,,,36
+100,m8bs,8,NA | m8bs | outdoor_clip | MUS_M8 | SND_VOC_B06 | SND_VM08_12 | SND_VM08_01 | camera,0,,,836
+101,m8tut2,4,NA | m8tut2 | SND_TC8_02 | camera,0,,,628
+102,m8tut3,5,NA | m8tut3 | snow_falling | SND_TC8_03 | camera,0,,,416
+103,m8tut4,7,NA | m8tut4 | snow_falling | Snow3 | tutpincusion_on | SND_TC8_04 | camera,0,,,628
+104,m8tut5,4,NA | m8tut5 | SND_TC8_05 | camera,0,,,500
+105,Patrol_guns,3,NA | Patrol_guns | seq_70,0,,,296
+106,Inside_guns,3,NA | Inside_guns | seq_100,0,,,276
+107,Close_call,3,NA | Close_call | shout,0,,,152
+108,Close_call2,3,NA | Close_call2 | shout2,0,,,152
+109,Spot_shout,3,NA | Spot_shout | shout,0,,,176
+110,Spot_shout2,3,NA | Spot_shout2 | shout2,0,,,176
+111,Leader_shout,3,NA | Leader_shout | shout,0,,,176
+112,Patrol_banter,3,NA | Patrol_banter | banter,0,,,140
+113,Patrol_banter2,3,NA | Patrol_banter2 | banter,0,,,140
+114,Inside_banter,3,NA | Inside_banter | banter,0,,,188
+115,Inside_banter2,3,NA | Inside_banter2 | banter2,0,,,140
+116,Inside_banter3,3,NA | Inside_banter3 | banter3,0,,,140
+117,Leader_banter,3,NA | Leader_banter | banter,0,,,188
+118,Dredge_banter,3,NA | Dredge_banter | banter,0,,,188
+119,Snow_banter,3,NA | Snow_banter | banter,0,,,140
+120,Crapper_banter,3,NA | Crapper_banter | banter,0,,,164
+121,Battle_cry,3,NA | Battle_cry | yell,0,,,200
+122,Battle_cry2,3,NA | Battle_cry2 | yell,0,,,200
+123,snd_wind_outside,5,NA | snd_wind_outside | SND_CROW_SQUAK | SND_WOLFHOWL | SND_OUTDOOR_AMBIENCE_LOOP,0,,,536
+124,snd_wind_inside,3,NA | snd_wind_inside | SND_OUTDOOR_AMBIENCE_LOOP,0,,,96
+125,check_camera_inside_state,5,NA | check_camera_inside_state | snd_wind_outside | windblowing | snd_wind_inside,0,,,248
+126,snow_falling,10,NA | snow_falling | snow_flakes | camera | effect_snow.tif | effect_snow02.tif | effect_snow03.tif | effect_snow04.tif | effect_snow05.tif | indoor_outdoor,0,,,1160
+127,outdoor_clip,11,NA | outdoor_clip | clip_out | lodLevel | clip_fast | clip_medfast | clip_med | clip_slow | clip_realslow | stop_all | camera,0,,,1096
+128,zoom_control,3,NA | zoom_control | outdoor_clip,0,,,168
+129,cold_breath,7,NA | dummy_node | cold_breath | breath | cold_breath_p | head | cloudpuff01.tif,0,,,760
+130,GetDocs,11,NA | GetDocs | seq_0 | open | screenglow | screensaver | screensaveron | laptopscreen | SND_PICK_UP_ITEM | alaska4d_computer | computer_action,5,screenglow | screensaver | laptopscreen | alaska4d_computer | computer_action,screenglow | screensaver | laptopscreen | alaska4d_computer | computer_action,532
+131,screensaveron,4,NA | alaska4d_computer | screensaveron | screensaver,2,alaska4d_computer | screensaver,alaska4d_computer | screensaver,812
+132,blowDoor,16,NA | doorhit | blowDoor | doordi | turnitoff | detail | doorbits | doorbreak | doorbit1 | doorbit2 | doorbit3 | doorbit4 | doorbit5 | doorbit6 | doorbit7 | doorbit8,12,doorhit | doordi | detail | doorbits | doorbit1 | doorbit2 | doorbit3 | doorbit4 | doorbit5 | doorbit6 | doorbit7 | doorbit8,doorhit | doordi | doorbits | doorbit1 | doorbit2 | doorbit3 | doorbit4 | doorbit5 | doorbit6 | doorbit7 | doorbit8,264
+133,doorbreak,4,NA | doorbreak | doorbits | m8,1,doorbits,doorbits,328
+134,singleDoor,7,NA | singleDoor | seq_0 | open | close | SND_DOOR_OPEN | SND_DOOR_CLOSE,0,,,836
+135,kick_singleDoor,5,NA | kick_singleDoor | seq_0 | open | SND_WOODEN_DOOR_KICKED_OPEN,0,,,456
+136,depot_window01,5,NA | depot_window01 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | lodgewindow,1,depot_window01,depot_window01,164
+137,depot_window02,5,NA | depot_window02 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | lodgewindow,1,depot_window02,depot_window02,164
+138,depot_window03,5,NA | depot_window03 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | lodgewindow,1,depot_window03,depot_window03,164
+139,depot_window04,5,NA | depot_window04 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | lodgewindow,1,depot_window04,depot_window04,164
+140,tri_window01,5,NA | tri_window01 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | snowwindow,1,tri_window01,tri_window01,164
+141,tri_window02,5,NA | tri_window02 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | snowwindow,1,tri_window02,tri_window02,164
+142,tri_window03,5,NA | tri_window03 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | snowwindow,1,tri_window03,tri_window03,164
+143,dredge_window01,4,NA | dredge_window01 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif,1,dredge_window01,dredge_window01,148
+144,dredge_window02,4,NA | dredge_window02 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif,1,dredge_window02,dredge_window02,148
+145,out2_window01,5,NA | out2_window01 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | shedwindow,1,out2_window01,out2_window01,164
+146,out2_window02,5,NA | out2_window02 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | shedwindow,1,out2_window02,out2_window02,164
+147,out2_window03,5,NA | out2_window03 | SND_GLASS_BREAK_MEDIUM | alaska4d_window01.tif | shedwindow,1,out2_window03,out2_window03,164
+148,alaska4d_beer,4,NA | alaska4d_beer | SND_BULLET_PLATE | alaska4d_bottle01.tif,1,alaska4d_beer,alaska4d_beer,148
+149,alaska4d_plate,3,NA | alaska4d_plate | SND_BULLET_PLATE,1,alaska4d_plate,alaska4d_plate,228
+150,alaska4d_foamcup,3,NA | alaska4d_foamcup | SND_BULLET_PLATE,1,alaska4d_foamcup,alaska4d_foamcup,228
+151,flame_in_barrel,10,NA | barrel_fire1 | flame_in_barrel | SND_SMALL_FIRE_LOOP | main_barrel_fire | fire_hardedge.tif | barrel_fire_a_lapping1 | barrel_sparks | cloudpuff01.tif | fire_smoker1,1,barrel_fire1,barrel_fire1,1536
+152,barrel_dest,7,NA | barrel1 | barrel_dest | flame_in_barrel | bchunk1_fly | bchunk2_fly | bchunk3_fly,1,barrel1,barrel1,308
+153,bchunk1_fly,5,NA | bchunk1 | bchunk1_fly | bchunk1_fire | fire_hardedge.tif,1,bchunk1,bchunk1,592
+154,bchunk2_fly,5,NA | bchunk2 | bchunk2_fly | bchunk2_fire | fire_hardedge.tif,1,bchunk2,bchunk2,592
+155,bchunk3_fly,5,NA | bchunk3 | bchunk3_fly | bchunk3_fire | fire_hardedge.tif,1,bchunk3,bchunk3,592
+156,crate_lightwood01,10,NA | crate_lightwood01 | crate_good | crate_parts | crate_part_fly01 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood01 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood01 | crate_good | crate_parts,164
+157,crate_lightwood02,10,NA | crate_lightwood02 | crate_good | crate_parts | crate_part_fly02 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood02 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood02 | crate_good | crate_parts,164
+158,crate_lightwood03,10,NA | crate_lightwood03 | crate_good | crate_parts | crate_part_fly03 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood03 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood03 | crate_good | crate_parts,164
+159,crate_lightwood07,10,NA | crate_lightwood07 | crate_good | crate_parts | crate_part_fly07 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood07 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood07 | crate_good | crate_parts,164
+160,crate_lightwood12,10,NA | crate_lightwood12 | crate_good | crate_parts | crate_part_fly12 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood12 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood12 | crate_good | crate_parts,164
+161,crate_lightwood13,10,NA | crate_lightwood13 | crate_good | crate_parts | crate_part_fly13 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood13 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood13 | crate_good | crate_parts,164
+162,crate_lightwood14,10,NA | crate_lightwood14 | crate_good | crate_parts | crate_part_fly14 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood14 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood14 | crate_good | crate_parts,164
+163,crate_lightwood20,10,NA | crate_lightwood20 | crate_good | crate_parts | crate_part_fly20 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood20 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood20 | crate_good | crate_parts,164
+164,crate_lightwood23,10,NA | crate_lightwood23 | crate_good | crate_parts | crate_part_fly23 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood23 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood23 | crate_good | crate_parts,164
+165,crate_lightwood24,10,NA | crate_lightwood24 | crate_good | crate_parts | crate_part_fly24 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood24 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood24 | crate_good | crate_parts,164
+166,crate_lightwood26,10,NA | crate_lightwood26 | crate_good | crate_parts | crate_part_fly26 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood26 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood26 | crate_good | crate_parts,164
+167,crate_lightwood28,10,NA | crate_lightwood28 | crate_good | crate_parts | crate_part_fly28 | part1 | part2 | part3 | part4 | part5,8,crate_lightwood28 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5,crate_lightwood28 | crate_good | crate_parts,164
+168,crate_part_fly01,9,NA | crate_lightwood01 | crate_part_fly01 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood01 | crate_parts,crate_lightwood01 | crate_parts,1096
+169,crate_part_fly02,9,NA | crate_lightwood02 | crate_part_fly02 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood02 | crate_parts,crate_lightwood02 | crate_parts,1096
+170,crate_part_fly03,9,NA | crate_lightwood03 | crate_part_fly03 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood03 | crate_parts,crate_lightwood03 | crate_parts,1096
+171,crate_part_fly07,9,NA | crate_lightwood07 | crate_part_fly07 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood07 | crate_parts,crate_lightwood07 | crate_parts,1096
+172,crate_part_fly12,9,NA | crate_lightwood12 | crate_part_fly12 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood12 | crate_parts,crate_lightwood12 | crate_parts,1096
+173,crate_part_fly13,9,NA | crate_lightwood13 | crate_part_fly13 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood13 | crate_parts,crate_lightwood13 | crate_parts,1096
+174,crate_part_fly14,9,NA | crate_lightwood14 | crate_part_fly14 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood14 | crate_parts,crate_lightwood14 | crate_parts,1096
+175,crate_part_fly20,9,NA | crate_lightwood20 | crate_part_fly20 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood20 | crate_parts,crate_lightwood20 | crate_parts,1096
+176,crate_part_fly23,9,NA | crate_lightwood23 | crate_part_fly23 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood23 | crate_parts,crate_lightwood23 | crate_parts,1096
+177,crate_part_fly24,9,NA | crate_lightwood24 | crate_part_fly24 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood24 | crate_parts,crate_lightwood24 | crate_parts,1096
+178,crate_part_fly26,9,NA | crate_lightwood26 | crate_part_fly26 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood26 | crate_parts,crate_lightwood26 | crate_parts,1096
+179,crate_part_fly28,9,NA | crate_lightwood28 | crate_part_fly28 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_lightwood28 | crate_parts,crate_lightwood28 | crate_parts,1096
+180,turn_off_gen,5,NA | gen_fiddle_switch | turn_off_gen | gen_switch_up | gen_switch_down,1,gen_fiddle_switch,gen_fiddle_switch,380
+181,gen_switch_down,25,NA | generator_1 | gen_switch_down | switch | generator_off | alarm_switch_down | aklite_out01 | aklite_out02 | aklite_out03 | aklite_out04 | aklite_out05 | aklite_out06 | aklite_out07 | aklite_out08 | aklite_out09 | aklite_out10 | aklite_out11 | aklite_out12 | aklite_out13 | aklite_out14 | aklite_out15 | aklite_out16 | gen_goin_down | gen_smoke1 | SND_GEN_DESTROY,2,generator_1 | switch,generator_1,660
+182,gen_switch_up,23,NA | generator_1 | gen_switch_up | switch | generator_off | alarm_switch_up | gen_smoke1 | aklite_on01 | aklite_on02 | aklite_on03 | aklite_on04 | aklite_on05 | aklite_on06 | aklite_on07 | aklite_on08 | aklite_on09 | aklite_on10 | aklite_on11 | aklite_on12 | aklite_on13 | aklite_on14 | aklite_on15 | aklite_on16,2,generator_1 | switch,generator_1,604
+183,generator_1,41,NA | generator_1 | generator_dis | generator_off | alarm_action_plate | alarm_switch_down | generator | turn_off_gen | kill_switch | gen_fiddle_switch | gen_good | destroyed | gen_parts | aklite_out01 | aklite_out02 | aklite_out03 | aklite_out04 | aklite_out05 | aklite_out06 | aklite_out07 | aklite_out08 | aklite_out09 | aklite_out10 | aklite_out11 | aklite_out12 | aklite_out13 | aklite_out14 | aklite_out15 | aklite_out16 | gen_part_fly | part1 | part2 | part3 | part4 | stack | destroyed_di | gen_goin_down | gen_smoke1 | SND_GEN_DESTROY | frame | switch,16,generator_1 | generator_dis | alarm_action_plate | kill_switch | gen_fiddle_switch | gen_good | destroyed | gen_parts | part1 | part2 | part3 | part4 | stack | destroyed_di | frame | switch,generator_1 | generator_dis | alarm_action_plate | kill_switch | gen_fiddle_switch | gen_good | gen_parts | stack | destroyed_di,768
+184,gen_part_fly,5,NA | generator_1 | gen_part_fly | gen_parts | m8,2,generator_1 | gen_parts,generator_1 | gen_parts,348
+185,gen_smoke1,8,NA | generator_1 | gen_smoke1 | stack | cloudpuff01.tif | wiggle | SND_GENERATOR_LOOP | SND_GENERATOR_AMBIENCE_LOOP,3,generator_1 | stack | wiggle,generator_1 | stack | wiggle,1008
+186,gentire1,3,NA | gentire1 | tire_single_di,2,gentire1 | tire_single_di,gentire1 | tire_single_di,196
+187,gentire2,3,NA | gentire2 | tire_single_di,2,gentire2 | tire_single_di,gentire2 | tire_single_di,196
+188,alaska4h_beartrap01,5,NA | alaska4h_beartrap01 | tread_here | left_clamp | right_clamp,4,alaska4h_beartrap01 | tread_here | left_clamp | right_clamp,alaska4h_beartrap01 | tread_here | left_clamp | right_clamp,312
+189,fireplace_flame1,14,NA | fireplace_node1 | fireplace_flame1 | firesound_off | firesound_on | SND_SMALL_FIRE_LOOP | indoor_outdoor | fireplace_fire | fire_hardedge.tif | fireplace_lapping1 | fireplace_sparks | cloudpuff01.tif | fireplace_smoke1 | fireplacelight1,2,fireplace_node1 | fireplacelight1,fireplace_node1 | fireplacelight1,1916
+190,fireplace_flame2,14,NA | fireplace_node2 | fireplace_flame2 | firesound_off | firesound_on | SND_SMALL_FIRE_LOOP | indoor_outdoor | depot_fireplace_fire | fire_hardedge.tif | depot_fireplace_lapping1 | depot_fireplace_sparks | cloudpuff01.tif | depot_fireplace_smoke1 | fireplacelight2,2,fireplace_node2 | fireplacelight2,fireplace_node2 | fireplacelight2,1916
+191,smobile1,16,NA | smobile1 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,15,smobile1 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,smobile1 | smobile_hitme | hulkdi,60
+192,smobile2,16,NA | smobile2 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,15,smobile2 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,smobile2 | smobile_hitme | hulkdi,60
+193,smobile3,16,NA | smobile3 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,15,smobile3 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10,smobile3 | smobile_hitme | hulkdi,60
+194,smobile1,21,NA | smobile1 | smobile_hitme | healthy | destroyed | hulkdi | smobile_flypart1 | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | main_barrel_fire | hulk | fire_hardedge.tif | fire_smoker1 | cloudpuff01.tif,15,smobile1 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | hulk,smobile1 | smobile_hitme | hulkdi | hulk,1016
+195,smobile2,21,NA | smobile2 | smobile_hitme | healthy | destroyed | hulkdi | smobile_flypart2 | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | main_barrel_fire | hulk | fire_hardedge.tif | fire_smoker1 | cloudpuff01.tif,15,smobile2 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | hulk,smobile2 | smobile_hitme | hulkdi | hulk,1016
+196,smobile3,21,NA | smobile3 | smobile_hitme | healthy | destroyed | hulkdi | smobile_flypart3 | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | main_barrel_fire | hulk | fire_hardedge.tif | fire_smoker1 | cloudpuff01.tif,15,smobile3 | smobile_hitme | healthy | destroyed | hulkdi | part1 | part2 | part3 | part4 | part5 | part7 | part8 | part9 | part10 | hulk,smobile3 | smobile_hitme | hulkdi | hulk,1016
+197,smobile_flypart1,5,NA | smobile1 | smobile_flypart1 | destroyed | m8,2,smobile1 | destroyed,smobile1,260
+198,smobile_flypart2,5,NA | smobile2 | smobile_flypart2 | destroyed | m8,2,smobile2 | destroyed,smobile2,260
+199,smobile_flypart3,5,NA | smobile3 | smobile_flypart3 | destroyed | m8,2,smobile3 | destroyed,smobile3,260
+200,outhousedoor1,3,NA | door_outhouse1 | outhousedoor1,1,door_outhouse1,door_outhouse1,36
+201,outhousedoor2,3,NA | door_outhouse2 | outhousedoor2,1,door_outhouse2,door_outhouse2,36
+202,top_outhouse1,37,NA | outhouse1 | top_outhouse1 | hitthecan | toilet | outhousedoor1 | vishealthy | out_count | C4 Ammo | c4 | toilet_flypart1 | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | part13 | part14 | part15 | holetrigger | visbase | base | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,30,outhouse1 | hitthecan | toilet | vishealthy | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | part13 | part14 | part15 | holetrigger | visbase | base | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,outhouse1 | hitthecan | toilet | vishealthy | holetrigger | visbase,504
+203,top_outhouse2,37,NA | outhouse2 | top_outhouse2 | hitthecan | toilet | outhousedoor2 | vishealthy | out_count | C4 Ammo | c4 | toilet_flypart2 | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | part13 | part14 | part15 | holetrigger | visbase | base | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,30,outhouse2 | hitthecan | toilet | vishealthy | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | part13 | part14 | part15 | holetrigger | visbase | base | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,outhouse2 | hitthecan | toilet | vishealthy | holetrigger | visbase,504
+204,toilet_flypart1,10,NA | outhouse1 | toilet_flypart1 | toilet | m8 | SND_BODY_FALL_SAND | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,outhouse1 | toilet,outhouse1 | toilet,1120
+205,toilet_flypart2,10,NA | outhouse2 | toilet_flypart2 | toilet | m8 | SND_BODY_FALL_SAND | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,outhouse2 | toilet,outhouse2 | toilet,1120
+206,base_outhouse1,26,NA | outhouse1 | base_outhouse1 | holetrigger | top_outhouse1 | set_hole1 | base | visbase | part16 | toilet_flypart1 | part17 | part18 | part19 | part20 | part21 | part22 | part23 | crap_spurt_up | effect_snow.tif | effect_snow02.tif | effect_snow03.tif | effect_snow04.tif | effect_snow05.tif | crap_fall_down | crapsound | SND_BULLET_INTO_BODY,12,outhouse1 | holetrigger | base | visbase | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,outhouse1 | holetrigger | visbase,1204
+207,base_outhouse2,26,NA | outhouse2 | base_outhouse2 | holetrigger | top_outhouse2 | set_hole2 | base | visbase | part16 | toilet_flypart2 | part17 | part18 | part19 | part20 | part21 | part22 | part23 | crap_spurt_up | effect_snow.tif | effect_snow02.tif | effect_snow03.tif | effect_snow04.tif | effect_snow05.tif | crap_fall_down | crapsound | SND_BULLET_INTO_BODY,12,outhouse2 | holetrigger | base | visbase | part16 | part17 | part18 | part19 | part20 | part21 | part22 | part23,outhouse2 | holetrigger | visbase,1204
+208,set_hole1,5,NA | outhousehole1 | set_hole1 | outholehealthy1 | outholedestroyed1,3,outhousehole1 | outholehealthy1 | outholedestroyed1,outhousehole1 | outholehealthy1 | outholedestroyed1,44
+209,set_hole2,5,NA | outhousehole2 | set_hole2 | outholehealthy2 | outholedestroyed2,3,outhousehole2 | outholehealthy2 | outholedestroyed2,outhousehole2 | outholehealthy2 | outholedestroyed2,44
+210,aklite_on01,8,NA | aklite_01 | aklite_on01 | dilite | bulb | bulboff | flare | source,6,aklite_01 | dilite | bulb | bulboff | flare | source,aklite_01 | dilite | bulb | bulboff | flare,60
+211,aklite_on02,8,NA | aklite_02 | aklite_on02 | dilite | bulb | bulboff | flare | source,6,aklite_02 | dilite | bulb | bulboff | flare | source,aklite_02 | dilite | bulb | bulboff | flare,60
+212,aklite_on03,8,NA | aklite_03 | aklite_on03 | dilite | bulb | bulboff | flare | source,6,aklite_03 | dilite | bulb | bulboff | flare | source,aklite_03 | dilite | bulb | bulboff | flare,60
+213,aklite_on04,8,NA | aklite_04 | aklite_on04 | dilite | bulb | bulboff | flare | source,6,aklite_04 | dilite | bulb | bulboff | flare | source,aklite_04 | dilite | bulb | bulboff | flare,60
+214,aklite_on07,8,NA | aklite_07 | aklite_on07 | dilite | bulb | bulboff | flare | source,6,aklite_07 | dilite | bulb | bulboff | flare | source,aklite_07 | dilite | bulb | bulboff | flare,60
+215,aklite_on08,8,NA | aklite_08 | aklite_on08 | dilite | bulb | bulboff | flare | source,6,aklite_08 | dilite | bulb | bulboff | flare | source,aklite_08 | dilite | bulb | bulboff | flare,60
+216,aklite_on09,8,NA | aklite_09 | aklite_on09 | dilite | bulb | bulboff | flare | source,6,aklite_09 | dilite | bulb | bulboff | flare | source,aklite_09 | dilite | bulb | bulboff | flare,60
+217,aklite_on10,8,NA | aklite_10 | aklite_on10 | dilite | bulb | bulboff | flare | source,6,aklite_10 | dilite | bulb | bulboff | flare | source,aklite_10 | dilite | bulb | bulboff | flare,60
+218,aklite_on11,8,NA | aklite_11 | aklite_on11 | dilite | bulb | bulboff | flare | source,6,aklite_11 | dilite | bulb | bulboff | flare | source,aklite_11 | dilite | bulb | bulboff | flare,60
+219,aklite_on12,8,NA | aklite_12 | aklite_on12 | dilite | bulb | bulboff | flare | source,6,aklite_12 | dilite | bulb | bulboff | flare | source,aklite_12 | dilite | bulb | bulboff | flare,60
+220,aklite_on13,8,NA | aklite_13 | aklite_on13 | dilite | bulb | bulboff | flare | source,6,aklite_13 | dilite | bulb | bulboff | flare | source,aklite_13 | dilite | bulb | bulboff | flare,60
+221,aklite_on14,8,NA | aklite_14 | aklite_on14 | dilite | bulb | bulboff | flare | source,6,aklite_14 | dilite | bulb | bulboff | flare | source,aklite_14 | dilite | bulb | bulboff | flare,60
+222,aklite_on15,8,NA | aklite_15 | aklite_on15 | dilite | bulb | bulboff | flare | source,6,aklite_15 | dilite | bulb | bulboff | flare | source,aklite_15 | dilite | bulb | bulboff | flare,60
+223,aklite_01,5,NA | aklite_01 | source | destroy_aklite | aklite_on01,2,aklite_01 | source,aklite_01,68
+224,aklite_02,5,NA | aklite_02 | source | destroy_aklite | aklite_on02,2,aklite_02 | source,aklite_02,68
+225,aklite_03,5,NA | aklite_03 | source | destroy_aklite | aklite_on03,2,aklite_03 | source,aklite_03,68
+226,aklite_04,5,NA | aklite_04 | source | destroy_aklite | aklite_on04,2,aklite_04 | source,aklite_04,68
+227,aklite_07,5,NA | aklite_07 | source | destroy_aklite | aklite_on07,2,aklite_07 | source,aklite_07,68
+228,aklite_08,5,NA | aklite_08 | source | destroy_aklite | aklite_on08,2,aklite_08 | source,aklite_08,68
+229,aklite_09,5,NA | aklite_09 | source | destroy_aklite | aklite_on09,2,aklite_09 | source,aklite_09,68
+230,aklite_10,5,NA | aklite_10 | source | destroy_aklite | aklite_on10,2,aklite_10 | source,aklite_10,68
+231,aklite_11,5,NA | aklite_11 | source | destroy_aklite | aklite_on11,2,aklite_11 | source,aklite_11,68
+232,aklite_12,5,NA | aklite_12 | source | destroy_aklite | aklite_on12,2,aklite_12 | source,aklite_12,68
+233,aklite_13,5,NA | aklite_13 | source | destroy_aklite | aklite_on13,2,aklite_13 | source,aklite_13,68
+234,aklite_14,5,NA | aklite_14 | source | destroy_aklite | aklite_on14,2,aklite_14 | source,aklite_14,68
+235,aklite_15,5,NA | aklite_15 | source | destroy_aklite | aklite_on15,2,aklite_15 | source,aklite_15,68
+236,destroy_aklite,5,NA | destroy_aklite | lightout_sparks1 | cloudpuff01.tif | SND_GLASS_BREAK_VERY_SMALL,0,,,440
+237,aklite_out01,7,NA | aklite_01 | aklite_out01 | bulb | bulboff | flare | source,5,aklite_01 | bulb | bulboff | flare | source,aklite_01 | bulb | bulboff | flare,60
+238,aklite_out02,7,NA | aklite_02 | aklite_out02 | bulb | bulboff | flare | source,5,aklite_02 | bulb | bulboff | flare | source,aklite_02 | bulb | bulboff | flare,60
+239,aklite_out03,7,NA | aklite_03 | aklite_out03 | bulb | bulboff | flare | source,5,aklite_03 | bulb | bulboff | flare | source,aklite_03 | bulb | bulboff | flare,60
+240,aklite_out04,7,NA | aklite_04 | aklite_out04 | bulb | bulboff | flare | source,5,aklite_04 | bulb | bulboff | flare | source,aklite_04 | bulb | bulboff | flare,60
+241,aklite_out07,7,NA | aklite_07 | aklite_out07 | bulb | bulboff | flare | source,5,aklite_07 | bulb | bulboff | flare | source,aklite_07 | bulb | bulboff | flare,60
+242,aklite_out08,7,NA | aklite_08 | aklite_out08 | bulb | bulboff | flare | source,5,aklite_08 | bulb | bulboff | flare | source,aklite_08 | bulb | bulboff | flare,60
+243,aklite_out09,7,NA | aklite_09 | aklite_out09 | bulb | bulboff | flare | source,5,aklite_09 | bulb | bulboff | flare | source,aklite_09 | bulb | bulboff | flare,60
+244,aklite_out10,7,NA | aklite_10 | aklite_out10 | bulb | bulboff | flare | source,5,aklite_10 | bulb | bulboff | flare | source,aklite_10 | bulb | bulboff | flare,60
+245,aklite_out11,7,NA | aklite_11 | aklite_out11 | bulb | bulboff | flare | source,5,aklite_11 | bulb | bulboff | flare | source,aklite_11 | bulb | bulboff | flare,60
+246,aklite_out12,7,NA | aklite_12 | aklite_out12 | bulb | bulboff | flare | source,5,aklite_12 | bulb | bulboff | flare | source,aklite_12 | bulb | bulboff | flare,60
+247,aklite_out13,7,NA | aklite_13 | aklite_out13 | bulb | bulboff | flare | source,5,aklite_13 | bulb | bulboff | flare | source,aklite_13 | bulb | bulboff | flare,60
+248,aklite_out14,7,NA | aklite_14 | aklite_out14 | bulb | bulboff | flare | source,5,aklite_14 | bulb | bulboff | flare | source,aklite_14 | bulb | bulboff | flare,60
+249,aklite_out15,7,NA | aklite_15 | aklite_out15 | bulb | bulboff | flare | source,5,aklite_15 | bulb | bulboff | flare | source,aklite_15 | bulb | bulboff | flare,60
+250,alarm_off,6,NA | alarm_off | seq_0 | alarm_action_plate | alarm_switch_up | alarm_switch_down,1,alarm_action_plate,alarm_action_plate,328
+251,alarm_switch_down,16,NA | alarmswitch | alarm_switch_down | switch | alarm_action_plate | stop_alarm_ls | alarm_light | lighton | alarmlight | lightoff | lightoff_green | lighton_green | alarmlight_green | single_alarm_range | trip_wires_off | alarm_triggers_off,9,alarmswitch | switch | alarm_action_plate | lighton | alarmlight | lightoff | lightoff_green | lighton_green | alarmlight_green,alarmswitch | alarm_action_plate | lighton | alarmlight | lightoff | lightoff_green | lighton_green | alarmlight_green,320
+252,alarm_switch_up,11,NA | alarmswitch | alarm_switch_up | switch | alarm_action_plate | generator_off | lighton_green | lightoff_green | alarmlight_green | stop_alarm_ls | single_alarm_range,6,alarmswitch | switch | alarm_action_plate | lighton_green | lightoff_green | alarmlight_green,alarmswitch | alarm_action_plate | lighton_green | lightoff_green | alarmlight_green,300
+253,alarm_triggers_on,12,NA | tripwire01 | alarm_triggers_on | start_ranges | single_alarm_range | alarm_on_01 | alarm_on_02 | alarm_on_03 | start_beam | trip_wire_on01 | trip_wire_on02 | trip_wire_on03,1,tripwire01,tripwire01,208
+254,thealarm_sound,9,NA | alarmhorn | thealarm_sound | SND_SIREN | MUS_M8_ALARM | hornlight | hornlightbox_on | hornlightbox_off | flare1,5,alarmhorn | hornlight | hornlightbox_on | hornlightbox_off | flare1,alarmhorn | hornlight | hornlightbox_on | hornlightbox_off | flare1,328
+255,stop_alarm_ls,8,NA | alarmhorn | stop_alarm_ls | thealarm_sound | hornlight | hornlightbox_on | hornlightbox_off | flare1,5,alarmhorn | hornlight | hornlightbox_on | hornlightbox_off | flare1,alarmhorn | hornlight | hornlightbox_on | hornlightbox_off | flare1,68
+256,alarm_light,7,NA | alarmswitch | alarm_light | lighton | alarmlight | lightoff | alarmlight_green,5,alarmswitch | lighton | alarmlight | lightoff | alarmlight_green,alarmswitch | lighton | alarmlight | lightoff | alarmlight_green,152
+257,alarm_on_01,17,NA | tripwire01 | alarm_on_01 | alarm_trip_test | tripwire_on_01 | player | detector_node | start_alarm | Hutchins | Bailey | DiMone | comerunning | alarm_light | SinglePlay | run/movies/m8/klaxon.pss | thealarm_sound | alarm_triggers_off,2,tripwire01 | detector_node,tripwire01 | detector_node,488
+258,alarm_on_02,17,NA | tripwire02 | alarm_on_02 | alarm_trip_test | tripwire_on_02 | player | detector_node | start_alarm | Hutchins | Bailey | DiMone | comerunning | alarm_light | SinglePlay | run/movies/m8/klaxon.pss | thealarm_sound | alarm_triggers_off,2,tripwire02 | detector_node,tripwire02 | detector_node,488
+259,alarm_on_03,17,NA | tripwire03 | alarm_on_03 | alarm_trip_test | tripwire_on_03 | player | detector_node | start_alarm | Hutchins | Bailey | DiMone | comerunning | alarm_light | SinglePlay | run/movies/m8/klaxon.pss | thealarm_sound | alarm_triggers_off,2,tripwire03 | detector_node,tripwire03 | detector_node,488
+260,manual_alarm,11,NA | manual_alarm | start_alarm | generator_off | comerunning | single_alarm_range | alarm_light | run/movies/m8/klaxon.pss | thealarm_sound | alarm_triggers_off | trip_wires_off,0,,,188
+261,alarm_off_01,5,NA | tripwire01 | alarm_off_01 | alarm_trip_test | alarm_on_01,1,tripwire01,tripwire01,36
+262,alarm_off_02,5,NA | tripwire02 | alarm_off_02 | alarm_trip_test | alarm_on_02,1,tripwire02,tripwire02,36
+263,alarm_off_03,5,NA | tripwire03 | alarm_off_03 | alarm_trip_test | alarm_on_03,1,tripwire03,tripwire03,36
+264,alarm_triggers_off,7,NA | tripwire01 | alarm_triggers_off | stop_ranges | alarm_off_01 | alarm_off_02 | alarm_off_03,1,tripwire01,tripwire01,100
+265,trip_wires_off,7,NA | tripwire01 | trip_wires_off | stop_beam | trip_wire_off01 | trip_wire_off02 | trip_wire_off03,1,tripwire01,tripwire01,100
+266,trip_wire_off01,8,NA | tripwire01 | trip_wire_off01 | turnoffbeam | trip_wire_on01 | mdbeam | mdgreen | mdlight,4,tripwire01 | mdbeam | mdgreen | mdlight,tripwire01 | mdbeam | mdgreen | mdlight,60
+267,trip_wire_off02,8,NA | tripwire02 | trip_wire_off02 | turnoffbeam | trip_wire_on02 | mdbeam | mdgreen | mdlight,4,tripwire02 | mdbeam | mdgreen | mdlight,tripwire02 | mdbeam | mdgreen | mdlight,60
+268,trip_wire_off03,8,NA | tripwire03 | trip_wire_off03 | turnoffbeam | trip_wire_on03 | mdbeam | mdgreen | mdlight,4,tripwire03 | mdbeam | mdgreen | mdlight,tripwire03 | mdbeam | mdgreen | mdlight,60
+269,trip_wire_on01,7,NA | tripwire01 | trip_wire_on01 | mdbeam | mdgreen | mdlight | rotatebeam,4,tripwire01 | mdbeam | mdgreen | mdlight,tripwire01 | mdbeam | mdgreen | mdlight,160
+270,trip_wire_on02,7,NA | tripwire02 | trip_wire_on02 | mdbeam | mdgreen | mdlight | rotatebeam,4,tripwire02 | mdbeam | mdgreen | mdlight,tripwire02 | mdbeam | mdgreen | mdlight,160
+271,trip_wire_on03,7,NA | tripwire03 | trip_wire_on03 | mdbeam | mdgreen | mdlight | rotatebeam,4,tripwire03 | mdbeam | mdgreen | mdlight,tripwire03 | mdbeam | mdgreen | mdlight,160
+272,single_alarm_range,10,NA | tripwire01 | single_alarm_range | check_ranges | player | detector_node | alarm_triggers_on | Bailey | Hutchins | DiMone,2,tripwire01 | detector_node,tripwire01 | detector_node,352
+273,russian_tunes1,12,NA | radio1 | russian_tunes1 | tune_1 | random_pick | tune_3 | tune_2 | MUS_ALASKA_RADIO_01 | indoor_outdoor | music_off | MUS_ALASKA_RADIO_02 | MUS_ALASKA_RADIO_03,1,radio1,radio1,708
+274,russian_tunes2,12,NA | radio2 | russian_tunes2 | tune_1 | random_pick | tune_3 | tune_2 | MUS_ALASKA_RADIO_01 | indoor_outdoor | music_off | MUS_ALASKA_RADIO_02 | MUS_ALASKA_RADIO_03,1,radio2,radio2,708
+275,russian_tunes3,12,NA | radio3 | russian_tunes3 | tune_1 | random_pick | tune_3 | tune_2 | MUS_ALASKA_RADIO_01 | indoor_outdoor | music_off | MUS_ALASKA_RADIO_02 | MUS_ALASKA_RADIO_03,1,radio3,radio3,708
+276,russian_radio1,8,NA | radio1 | russian_radio1 | russian_tunes1 | streaker | cloudpuff01.tif | sparker | flare_red.tif,1,radio1,radio1,788
+277,russian_radio2,8,NA | radio2 | russian_radio2 | russian_tunes2 | streaker | cloudpuff01.tif | sparker | flare_red.tif,1,radio2,radio2,788
+278,russian_radio3,8,NA | radio3 | russian_radio3 | russian_tunes3 | streaker | cloudpuff01.tif | sparker | flare_red.tif,1,radio3,radio3,788
+279,crate_group01,27,NA | crate_group01 | crate_good | cratecount | crate_parts | group_part_fly01 | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | SND_WOOD_EXPLOSION | extra_explosives | SND_C4_EXPLOSION_1 | fire_explode_med | explosive_stuff | exploding_fuel | mad_crows | SND_CROW_SQUAK | mad_crows2,15,crate_group01 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12,crate_group01 | crate_good | crate_parts,1364
+280,crate_group02,27,NA | crate_group02 | crate_good | cratecount | crate_parts | group_part_fly02 | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | SND_WOOD_EXPLOSION | extra_explosives | SND_C4_EXPLOSION_1 | fire_explode_med | explosive_stuff | exploding_fuel | mad_crows | SND_CROW_SQUAK | mad_crows2,15,crate_group02 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12,crate_group02 | crate_good | crate_parts,1364
+281,crate_group03,27,NA | crate_group03 | crate_good | cratecount | crate_parts | group_part_fly03 | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12 | SND_WOOD_EXPLOSION | extra_explosives | SND_C4_EXPLOSION_1 | fire_explode_med | explosive_stuff | exploding_fuel | mad_crows | SND_CROW_SQUAK | mad_crows2,15,crate_group03 | crate_good | crate_parts | part1 | part2 | part3 | part4 | part5 | part6 | part7 | part8 | part9 | part10 | part11 | part12,crate_group03 | crate_good | crate_parts,1364
+282,group_part_fly01,9,NA | crate_group01 | group_part_fly01 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_group01 | crate_parts,crate_group01 | crate_parts,1120
+283,group_part_fly02,9,NA | crate_group02 | group_part_fly02 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_group02 | crate_parts,crate_group02 | crate_parts,1120
+284,group_part_fly03,9,NA | crate_group03 | group_part_fly03 | crate_parts | m8 | gas_fire1 | fire_hardedge.tif | gen_smoke1 | cloudpuff01.tif,2,crate_group03 | crate_parts,crate_group03 | crate_parts,1120
