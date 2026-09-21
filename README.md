@@ -36,3 +36,4 @@ Run legitimately obtained SOCOM game data natively on PC without PS2 emulation.
 
 ## Legal
 
+This repository contains reverse-engineering and reimplementation work only. Original SOCOM game assets are not distributed.
