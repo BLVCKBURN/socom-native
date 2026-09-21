@@ -73,3 +73,31 @@ SCUS_971.34
 /disc/
 /game_data/
 /runtime_data/
+
+# Local/original SOCOM runtime assets
+runtime/retail_ui/original_assets/
+runtime/retail_ui/retail_ui_assets.local.ps1
+tools/textures/*.bak
+tools/textures/*.runtime11_*
+# Local build / generated outputs
+build/
+out/
+.vs/
+*.lib
+# Local runtime state / backups
+*.bak
+*.runtime11_*
+*.local.ps1
+*.local.json
+runtime/retail_ui/socom_texture_tool.exe
+# Original SOCOM data/assets - never commit
+*.elf
+*.irx
+*.rdr
+*.vag
+*.vpk
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.bmp

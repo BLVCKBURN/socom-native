@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.20)
+project(socom_cseal_weapon_recovery LANGUAGES CXX)
+add_executable(recover_cseal_weapons recover_cseal_weapons.cpp)
+target_compile_features(recover_cseal_weapons PRIVATE cxx_std_17)

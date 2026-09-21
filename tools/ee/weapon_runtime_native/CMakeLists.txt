@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.20)
+project(socom_weapon_runtime_recovery LANGUAGES CXX)
+add_executable(recover_weapon_runtime recover_weapon_runtime.cpp)
+target_compile_features(recover_weapon_runtime PRIVATE cxx_std_17)
